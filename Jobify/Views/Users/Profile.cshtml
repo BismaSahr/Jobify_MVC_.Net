@@ -1,0 +1,302 @@
+﻿@model Jobify.Models.UserProfileViewModel
+
+@{
+    ViewBag.Title = "User Profile"; // Set the page title
+}
+
+<style>
+    /* General body font and background */
+    body {
+        font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+        background-color: #f0f2f5; /* A softer, light-grey background */
+    }
+
+    .container {
+        max-width: 800px; /* Adjust max-width for content */
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    /* Enhanced Details Card Styling (renamed from .profile-card to be consistent with .details-card) */
+    .details-card { /* Using .details-card for consistency with your provided styles */
+        background-color: #ffffff;
+        border-radius: 12px;
+        padding: 2.5rem; /* Increased padding */
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); /* Softer, more pronounced shadow */
+        border: 1px solid #e0e0e0; /* Subtle border */
+    }
+
+    /* Gradient Header Styling */
+    .gradient-header {
+        background: #4A90E2; /* Blue/Purple gradient for Edit button */
+        color: white;
+        padding: 1.5rem;
+        border-radius: 8px; /* Slightly less rounded than card to differentiate */
+        margin-top: -2.5rem; /* Pull up to overlap with card top */
+        margin-left: -2.5rem;
+        margin-right: -2.5rem;
+        margin-bottom: 2.5rem; /* Increased bottom margin */
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Shadow for the header */
+    }
+
+        .gradient-header h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 0;
+        }
+
+    /* Definition List (dl) Styling - adapted for UserProfile's table structure */
+    .profile-info { /* Reusing .profile-info for your table */
+        width: 100%; /* Ensure table takes full width */
+        margin-bottom: 20px;
+    }
+
+        .profile-info th, .profile-info td {
+            padding: 0.75rem 0; /* Consistent padding for each row - adjusted for table */
+            line-height: 1.5; /* Improve readability */
+        }
+
+        .profile-info th {
+            font-weight: 600; /* Bolder terms */
+            color: #333;
+            width: 180px; /* Fixed width for terms for better alignment */
+            text-align: right; /* Align terms to the right */
+            padding-right: 20px; /* Space between term and definition */
+            /* Removed float/clear as it's a table, not dl */
+            background-color: transparent; /* No background for table headers if you want to match dl look */
+            border-right: none; /* No border for table headers if you want to match dl look */
+        }
+
+        .profile-info td {
+            color: #555;
+            /* Using border-bottom on tr or td to mimic dl's dashed line */
+        }
+        /* Mimicking the dashed line separator for table rows */
+        .profile-info tbody tr:not(:last-child) td {
+            border-bottom: 1px dashed #eee;
+            padding-bottom: 0.75rem; /* Ensure padding matches dt/dd */
+        }
+
+        .profile-info tbody tr:not(:last-child) th {
+            border-bottom: 1px dashed #eee; /* Apply to th as well for full line */
+            padding-bottom: 0.75rem;
+        }
+
+
+    /* Action Buttons Styling (Copied directly from your User Details page CSS) */
+    .action-buttons {
+        margin-top: 2.5rem; /* Increased top margin */
+        display: flex;
+        justify-content: space-between; /* Spacing between buttons */
+        gap: 15px; /* Space between buttons */
+        flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+    }
+
+    /* General Button Styling (Copied directly from your User Details page CSS) */
+    .btn-action {
+        border: none;
+        border-radius: 8px;
+        padding: 0.75rem 1.8rem; /* Generous padding */
+        font-size: 1rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        text-decoration: none; /* Remove underline for links acting as buttons */
+        display: inline-flex; /* Align icon and text */
+        align-items: center;
+        justify-content: center;
+    }
+
+    .btn-edit {
+        background: #4A90E2; /* Blue/Purple gradient for Edit button */
+        color: white;
+    }
+
+        .btn-edit:hover {
+            background: #fff; /* White background on hover */
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            color: #4A90E2; /* Text color changes to blue on hover */
+            border: 1px solid #4A90E2; /* Add a border matching the hover text color */
+        }
+
+        .btn-edit:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+    .btn-back {
+        background-color: #fff; /* Light grey background for Back button */
+        color: #4A90E2;
+        border: 1px solid #ccc; /* Border color from your details page */
+    }
+
+        .btn-back:hover {
+            background-color: #4A90E2;
+            border-color: #4A90E2; /* Change border color on hover */
+            color: #fff;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08); /* Lighter shadow for back button */
+        }
+
+        .btn-back:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+    /* Icon within button (if you add icons later) */
+    .btn-action i {
+        margin-right: 8px;
+    }
+
+    /* Responsive adjustments for dl-horizontal (now adapted for table) */
+    @@media (max-width: 767px) {
+        .profile-info th, .profile-info td {
+            text-align: left;
+            padding-right: 0;
+            width: auto; /* Remove fixed width on small screens */
+        }
+
+        .profile-info th {
+            margin-top: 1rem; /* Space above label */
+            margin-bottom: 0.25rem; /* Space below label */
+        }
+
+        .profile-info td {
+            margin-bottom: 0.5rem; /* Space below value */
+        }
+
+        .profile-info tbody tr:not(:last-child) td,
+        .profile-info tbody tr:not(:last-child) th {
+            border-bottom: 1px dashed #eee; /* Keep dashed line for each row */
+            padding-bottom: 0.75rem;
+        }
+
+        .profile-info tbody tr th + td { /* Adjust for label-value pairing */
+            padding-left: 0;
+        }
+
+        .action-buttons {
+            flex-direction: column; /* Stack buttons vertically */
+            gap: 10px; /* Space between stacked buttons */
+        }
+
+        .btn-action {
+            width: 100%; /* Full width buttons */
+        }
+    }
+</style>
+
+<div class="container">
+    <div class="details-card">
+        <div class="gradient-header">
+            <h3 class="mb-0">
+                <i class="fas fa-user-circle me-2"></i> User Profile Details
+            </h3>
+        </div>
+
+        <table class="table table-borderless profile-info">
+            <tbody>
+                <tr>
+                    <th>Full Name</th>
+                    <td>@Model.FullName</td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td>@Model.Email</td>
+                </tr>
+                <tr>
+                    <th>Phone</th>
+                    <td>@Model.Phone</td>
+                </tr>
+                <tr>
+                    <th>Role</th>
+                    <td>@Model.Role</td>
+                </tr>
+                <tr>
+                    <th>Created At</th>
+                    <td>@(Model.CreatedAt?.ToString("yyyy-MM-dd HH:mm") ?? "N/A")</td>
+                </tr>
+
+                @if (Model.Role == "Admin")
+                {
+                    <tr>
+                        <th>Department</th>
+                        <td>@Model.Department</td>
+                    </tr>
+                }
+                else if (Model.Role == "Employer")
+                {
+                    <tr>
+                        <th>Company Name</th>
+                        <td>@Model.CompanyName</td>
+                    </tr>
+                    <tr>
+                        <th>Website</th>
+                        <td>@Model.Website</td>
+                    </tr>
+                    <tr>
+                        <th>Address</th>
+                        <td>@Model.Address</td>
+                    </tr>
+                    <tr>
+                        <th>Designation</th>
+                        <td>@Model.Designation</td>
+                    </tr>
+                }
+                else if (Model.Role == "JobSeeker")
+                {
+                    <tr>
+                        <th>Gender</th>
+                        <td>@Model.Gender</td>
+                    </tr>
+                    <tr>
+                        <th>Date of Birth</th>
+                        <td>@(Model.DateOfBirth?.ToString("yyyy-MM-dd") ?? "N/A")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <div class="action-buttons">
+            <a href="@Url.Action("EditProfile", "Users", new { id = Model.UserId })" class="btn-action btn-edit">
+                <i class="fas fa-edit"></i> Edit Profile
+            </a>
+            @{
+                var role = Session["Role"]?.ToString();
+            }
+
+            @if (role == "Employer")
+            {
+                <a href="@Url.Action("Dashboard", "Employers")" class="btn-action btn-back">
+                    <i class="fas fa-list"></i> Back
+                </a>
+            }
+            else if (role == "Admin")
+            {
+                <a href="@Url.Action("Dashboard", "Admins")" class="btn-action btn-back">
+                    <i class="fas fa-list"></i> Back
+                </a>
+            }
+            else if (role == "JobSeeker")
+            {
+                <a href="@Url.Action("Dashboard", "JobSeekers")" class="btn-action btn-back">
+                    <i class="fas fa-list"></i> Back
+                </a>
+            }
+            else
+            {
+                <a href="@Url.Action("Home", "Home")" class="btn-action btn-back">
+                    <i class="fas fa-list"></i> Back
+                </a>
+            }
+
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+}

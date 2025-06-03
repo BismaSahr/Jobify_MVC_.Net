@@ -1,0 +1,222 @@
+﻿@model Jobify.ViewModels.EmployerDashboardViewModel
+
+@{
+    ViewBag.Title = "Employer Dashboard";
+}
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<h2 class="text-center mb-4 dashboard-main-title" style="color: #4A90E2;">Welcome, @Session["FullName"]!</h2>
+
+<div class="row text-center mb-4">
+    <div class="col-md-4">
+        <div class="card text-white shadow p-3 rounded" style="background-color: rgba(255, 99, 132, 0.6);">
+
+
+            <a href="@Url.Action("MyJobs", "JobPosts")" class="text-white text-decoration-none">
+                <h4>Total Job Posts</h4>
+                <h2>@Model.TotalPostedJobs</h2>
+            </a>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-white shadow p-3 rounded" style="background-color: rgba(54, 162, 235, 0.6);">
+
+            <a href="@Url.Action("EmployerJobApplications", "JobApplications")" class="text-white text-decoration-none">
+                <h4>Total Applications</h4>
+                <h2>@Model.TotalApplications</h2>
+            </a>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-white shadow p-3 rounded" style="background-color: rgba(255, 206, 86, 0.6);">
+
+            <a href="@Url.Action("Create", "JobPosts")" class="text-white text-decoration-none">
+                <h4>Post New Job</h4>
+                <h2><i class="fas fa-plus-circle"></i></h2>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+
+    <div class="col-md-7">
+        <canvas id="jobPostsChart"></canvas>
+    </div>
+
+
+    <div class="col-md-5">
+        <div style="width: 480px; height: 480px;">
+            <canvas id="employerSummaryChart"></canvas>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="d-flex justify-content-center mb-4">
+    <div class="card p-3 shadow rounded">
+        <h3 class="p-2 rounded-top text-white" style="background-color: #4A90E2;">
+
+            <i class="fas fa-building"></i> Company Information
+        </h3>
+        <div class="p-3">
+            <p><strong>Company Name:</strong> @Model.EmployerDetails.CompanyName</p>
+            <p><strong>Website:</strong> <a href="@Model.EmployerDetails.Website" target="_blank" style="color: rgba(0, 123, 255, 0.7);">@Model.EmployerDetails.Website</a></p>
+            <p><strong>Address:</strong> @Model.EmployerDetails.Address</p>
+            <p><strong>Designation:</strong> @Model.EmployerDetails.Designation</p>
+            <a href="@Url.Action("EditProfile", "Users", new { id = Model.EmployerDetails.EmployerId })" class="btn btn-edit-profile mt-3">Edit Profile</a>
+        </div>
+    </div>
+</div>
+@*<div class="row mt-4">*@
+@*<div class="col-md-6 mb-4">
+
+        <div class="card p-3 shadow rounded">
+            <h3 class="p-2 rounded-top text-white" style="background-color: rgba(0, 123, 255, 0.7);">
+
+                <i class="fas fa-history"></i> Your Recent Job Posts
+            </h3>
+            <div class="p-3">
+                @if (Model.PostedJobs != null && Model.PostedJobs.Any())
+                {
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover">
+
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Category</th>
+                                    <th>Location</th>
+                                    <th>Deadline</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var job in Model.PostedJobs.OrderByDescending(j => j.CreatedAt).Take(5))
+                                {
+                                    <tr>
+                                        <td>@job.Title</td>
+                                        <td>@job.CategoryName</td>
+                                        <td>@job.LocationName</td>
+                                        <td>@(job.Deadline.HasValue ? job.Deadline.Value.ToShortDateString() : "N/A")</td>
+                                        <td>
+                                            <a href="@Url.Action("Details", "JobPosts", new { id = job.JobId })" class="btn btn-sm btn-outline-info">Details</a>
+                                            <a href="@Url.Action("Edit", "JobPosts", new { id = job.JobId })" class="btn btn-sm btn-outline-primary">Edit</a>
+                                            <a href="@Url.Action("Delete", "JobPosts", new { id = job.JobId })" class="btn btn-sm btn-outline-danger">Delete</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="text-center mt-3">
+                        <a href="@Url.Action("MyJobs", "JobPosts")" class="btn btn-info">View All Job Posts</a>
+                        <a href="@Url.Action("Create", "JobPosts")" class="btn btn-success">Post New Job</a>
+                    </div>
+                }
+                else
+                {
+                    <p class="text-center text-muted">You haven't posted any jobs yet.</p>
+                    <div class="text-center">
+                        <a href="@Url.Action("Create", "JobPosts")" class="btn btn-success">Post Your First Job</a>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>*@
+    </div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        // Data for the Job Posts by Weekday chart
+        var jobPostLabels = @Html.Raw(Json.Encode(Model.JobPostGraphLabels));
+        var jobPostData = @Html.Raw(Json.Encode(Model.JobPostGraphData));
+
+        // Chart for Job Posts by Weekday (Bar Chart, like Admin's jobChart)
+        var ctxJobPosts = document.getElementById('jobPostsChart').getContext('2d');
+        var jobPostsChart = new Chart(ctxJobPosts, {
+            type: 'bar',
+            data: {
+                labels: jobPostLabels,
+                datasets: [{
+                    label: 'Job Posts',
+                    data: jobPostData,
+                    backgroundColor: "rgba(0, 123, 255, 0.7)" // Matching Admin's jobChart color
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            precision: 0 // Ensure whole numbers for counts
+                        }
+                    }
+                }
+            }
+        });
+
+        // Data for the new Employer Summary Chart (Job Posts vs. Applications)
+        var employerSummaryLabels = ['Your Job Posts', 'Your Applications'];
+        var employerSummaryData = [@Model.TotalPostedJobs, @Model.TotalApplications];
+
+        // Chart for Employer Summary (Pie Chart, like Admin's usersChart)
+        var ctxEmployerSummary = document.getElementById('employerSummaryChart').getContext('2d');
+        var employerSummaryChart = new Chart(ctxEmployerSummary, {
+            type: 'pie',
+            data: {
+                labels: employerSummaryLabels,
+                datasets: [{
+                    data: employerSummaryData,
+                    backgroundColor: [
+                        "rgba(255, 99, 132, 0.6)", // Matching Admin's pie chart color 1
+                        "rgba(54, 162, 235, 0.6)"  // Matching Admin's pie chart color 2
+                    ]
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+    </script>
+}
+
+<style>
+    .dashboard-main-title {
+        color: var(--primary-brand-color-dark); /* Using darker shade for main title */
+        font-weight: 700;
+        margin-bottom: 2rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid #e9ecef;
+    }
+
+    .btn-edit-profile {
+        background-color: #4A90E2; /* Match the card header theme color */
+        color: white;
+        border: 1px solid rgba(0, 123, 255, 0.7);
+        padding: 0.75rem 1.5rem; /* Larger padding for a more "eye-catching" feel */
+        font-size: 1.1rem; /* Slightly larger font */
+        font-weight: bold; /* Make the text bolder */
+        transition: all 0.3s ease; /* Smooth transition for hover effects */
+        border-radius: 0.35rem; /* Consistent border radius */
+        display: inline-block; /* Ensure it respects text-align */
+        text-decoration: none; /* Remove underline from anchor tag */
+    }
+
+        .btn-edit-profile:hover {
+            background-color: white; /* Background becomes white on hover */
+            color: #4A90E2; /* Text color matches theme on hover */
+            border-color: rgba(0, 123, 255, 0.7); /* Border color matches theme on hover */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
+            text-decoration: none; /* Keep no underline on hover */
+        }
+</style>

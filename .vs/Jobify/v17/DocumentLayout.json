@@ -1,0 +1,905 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\DELL\\source\\repos\\Jobify\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|c:\\users\\dell\\source\\repos\\jobify\\jobify\\views\\jobseekers\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|solutionrelative:jobify\\views\\jobseekers\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|C:\\Users\\DELL\\source\\repos\\Jobify\\jobify\\views\\jobseekers\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|solutionrelative:jobify\\views\\jobseekers\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|C:\\Users\\DELL\\source\\repos\\Jobify\\jobify\\views\\jobseekers\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|solutionrelative:jobify\\views\\jobseekers\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|C:\\Users\\DELL\\source\\repos\\Jobify\\jobify\\controllers\\resumescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|solutionrelative:jobify\\controllers\\resumescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|C:\\Users\\DELL\\source\\repos\\Jobify\\jobify\\views\\employers\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|solutionrelative:jobify\\views\\employers\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|C:\\Users\\DELL\\source\\repos\\Jobify\\jobify\\views\\shared\\_jobseekerlayoutpage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|solutionrelative:jobify\\views\\shared\\_jobseekerlayoutpage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|C:\\Users\\DELL\\source\\repos\\Jobify\\jobify\\views\\savedjobs\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|solutionrelative:jobify\\views\\savedjobs\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|C:\\Users\\DELL\\source\\repos\\Jobify\\jobify\\views\\jobapplications\\jobseekerapplications.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|solutionrelative:jobify\\views\\jobapplications\\jobseekerapplications.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|C:\\Users\\DELL\\source\\repos\\Jobify\\jobify\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|solutionrelative:jobify\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|C:\\Users\\DELL\\source\\repos\\Jobify\\jobify\\views\\users\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|solutionrelative:jobify\\views\\users\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|C:\\Users\\DELL\\source\\repos\\Jobify\\jobify\\views\\users\\editfulluser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|solutionrelative:jobify\\views\\users\\editfulluser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|C:\\Users\\DELL\\source\\repos\\Jobify\\jobify\\views\\shared\\_employerlayoutpage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|solutionrelative:jobify\\views\\shared\\_employerlayoutpage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|C:\\Users\\DELL\\source\\repos\\Jobify\\jobify\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|solutionrelative:jobify\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|C:\\Users\\DELL\\source\\repos\\Jobify\\jobify\\views\\admins\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|solutionrelative:jobify\\views\\admins\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|C:\\Users\\DELL\\source\\repos\\Jobify\\jobify\\views\\admins\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|solutionrelative:jobify\\views\\admins\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|C:\\Users\\DELL\\source\\repos\\Jobify\\jobify\\views\\admins\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|solutionrelative:jobify\\views\\admins\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|C:\\Users\\DELL\\source\\repos\\Jobify\\jobify\\views\\admins\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|solutionrelative:jobify\\views\\admins\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|C:\\Users\\DELL\\source\\repos\\Jobify\\jobify\\views\\admins\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|solutionrelative:jobify\\views\\admins\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|C:\\Users\\DELL\\source\\repos\\Jobify\\jobify\\views\\admins\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|solutionrelative:jobify\\views\\admins\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|C:\\Users\\DELL\\source\\repos\\Jobify\\jobify\\viewmodels\\jobseekerdashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|solutionrelative:jobify\\viewmodels\\jobseekerdashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|C:\\Users\\DELL\\source\\repos\\Jobify\\jobify\\controllers\\jobseekerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|solutionrelative:jobify\\controllers\\jobseekerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|C:\\Users\\DELL\\source\\repos\\Jobify\\jobify\\viewmodels\\jobapplicationdetailviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|solutionrelative:jobify\\viewmodels\\jobapplicationdetailviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|C:\\Users\\DELL\\source\\repos\\Jobify\\jobify\\controllers\\adminscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|solutionrelative:jobify\\controllers\\adminscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|C:\\Users\\DELL\\source\\repos\\Jobify\\jobify\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|solutionrelative:jobify\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|C:\\Users\\DELL\\source\\repos\\Jobify\\jobify\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|solutionrelative:jobify\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|C:\\Users\\DELL\\source\\repos\\Jobify\\jobify\\models\\accountviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|solutionrelative:jobify\\models\\accountviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|C:\\Users\\DELL\\source\\repos\\Jobify\\jobify\\views\\jobapplications\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|solutionrelative:jobify\\views\\jobapplications\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|C:\\Users\\DELL\\source\\repos\\Jobify\\jobify\\views\\savedjobs\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|solutionrelative:jobify\\views\\savedjobs\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|C:\\Users\\DELL\\source\\repos\\Jobify\\jobify\\views\\savedjobs\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|solutionrelative:jobify\\views\\savedjobs\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|C:\\Users\\DELL\\source\\repos\\Jobify\\jobify\\views\\savedjobs\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|solutionrelative:jobify\\views\\savedjobs\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|C:\\Users\\DELL\\source\\repos\\Jobify\\jobify\\controllers\\jobapplicationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|solutionrelative:jobify\\controllers\\jobapplicationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|C:\\Users\\DELL\\source\\repos\\Jobify\\jobify\\views\\jobapplications\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|solutionrelative:jobify\\views\\jobapplications\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|C:\\Users\\DELL\\source\\repos\\Jobify\\jobify\\views\\jobapplications\\createapplication.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|solutionrelative:jobify\\views\\jobapplications\\createapplication.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|C:\\Users\\DELL\\source\\repos\\Jobify\\jobify\\views\\jobapplications\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|solutionrelative:jobify\\views\\jobapplications\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|C:\\Users\\DELL\\source\\repos\\Jobify\\jobify\\views\\jobapplications\\employerjobapplications.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|solutionrelative:jobify\\views\\jobapplications\\employerjobapplications.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|C:\\Users\\DELL\\source\\repos\\Jobify\\jobify\\views\\jobapplications\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|solutionrelative:jobify\\views\\jobapplications\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|C:\\Users\\DELL\\source\\repos\\Jobify\\jobify\\views\\jobapplications\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|solutionrelative:jobify\\views\\jobapplications\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|C:\\Users\\DELL\\source\\repos\\Jobify\\jobify\\views\\jobposts\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|solutionrelative:jobify\\views\\jobposts\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|C:\\Users\\DELL\\source\\repos\\Jobify\\jobify\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|solutionrelative:jobify\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|C:\\Users\\DELL\\source\\repos\\Jobify\\jobify\\viewmodels\\jobpostviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|solutionrelative:jobify\\viewmodels\\jobpostviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|C:\\Users\\DELL\\source\\repos\\Jobify\\jobify\\controllers\\savedjobscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|solutionrelative:jobify\\controllers\\savedjobscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|C:\\Users\\DELL\\source\\repos\\Jobify\\jobify\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|solutionrelative:jobify\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|C:\\Users\\DELL\\source\\repos\\Jobify\\jobify\\viewmodels\\employerdashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|solutionrelative:jobify\\viewmodels\\employerdashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|C:\\Users\\DELL\\source\\repos\\Jobify\\jobify\\controllers\\employerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|solutionrelative:jobify\\controllers\\employerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|C:\\Users\\DELL\\source\\repos\\Jobify\\jobify\\views\\resumes\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|solutionrelative:jobify\\views\\resumes\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|C:\\Users\\DELL\\source\\repos\\Jobify\\jobify\\viewmodels\\employerjobapplicationsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|solutionrelative:jobify\\viewmodels\\employerjobapplicationsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|C:\\Users\\DELL\\source\\repos\\Jobify\\jobify\\views\\users\\editprofile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|solutionrelative:jobify\\views\\users\\editprofile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|C:\\Users\\DELL\\source\\repos\\Jobify\\jobify\\views\\jobposts\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|solutionrelative:jobify\\views\\jobposts\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|C:\\Users\\DELL\\source\\repos\\Jobify\\jobify\\views\\jobposts\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|solutionrelative:jobify\\views\\jobposts\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|C:\\Users\\DELL\\source\\repos\\Jobify\\jobify\\views\\jobposts\\myjobs.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|solutionrelative:jobify\\views\\jobposts\\myjobs.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|C:\\Users\\DELL\\source\\repos\\Jobify\\jobify\\views\\jobposts\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|solutionrelative:jobify\\views\\jobposts\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|C:\\Users\\DELL\\source\\repos\\Jobify\\jobify\\views\\jobposts\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|solutionrelative:jobify\\views\\jobposts\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|C:\\Users\\DELL\\source\\repos\\Jobify\\jobify\\views\\employers\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|solutionrelative:jobify\\views\\employers\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|C:\\Users\\DELL\\source\\repos\\Jobify\\jobify\\views\\users\\userfulldetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|solutionrelative:jobify\\views\\users\\userfulldetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|C:\\Users\\DELL\\source\\repos\\Jobify\\jobify\\views\\users\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1215C7A-B09B-482E-AE0A-DB1ABA6A6B5D}|Jobify\\Jobify.csproj|solutionrelative:jobify\\views\\users\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "JobSeekerApplications.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\JobApplications\\JobSeekerApplications.cshtml",
+              "RelativeDocumentMoniker": "Jobify\\Views\\JobApplications\\JobSeekerApplications.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\JobApplications\\JobSeekerApplications.cshtml",
+              "RelativeToolTip": "Jobify\\Views\\JobApplications\\JobSeekerApplications.cshtml",
+              "ViewState": "AgIAAGkAAAAAAAAAAAAAAHUAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-01T19:37:16.546Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Dashboard.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\Employers\\Dashboard.cshtml",
+              "RelativeDocumentMoniker": "Jobify\\Views\\Employers\\Dashboard.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\Employers\\Dashboard.cshtml",
+              "RelativeToolTip": "Jobify\\Views\\Employers\\Dashboard.cshtml",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAAkAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-01T15:32:55.317Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Dashboard.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\JobSeekers\\Dashboard.cshtml",
+              "RelativeDocumentMoniker": "Jobify\\Views\\JobSeekers\\Dashboard.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\JobSeekers\\Dashboard.cshtml",
+              "RelativeToolTip": "Jobify\\Views\\JobSeekers\\Dashboard.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAALIAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-01T20:08:38.89Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ResumesController.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Controllers\\ResumesController.cs",
+              "RelativeDocumentMoniker": "Jobify\\Controllers\\ResumesController.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Controllers\\ResumesController.cs",
+              "RelativeToolTip": "Jobify\\Controllers\\ResumesController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEsAAABtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-01T19:49:15.82Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\JobSeekers\\Delete.cshtml",
+              "RelativeDocumentMoniker": "Jobify\\Views\\JobSeekers\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\JobSeekers\\Delete.cshtml",
+              "RelativeToolTip": "Jobify\\Views\\JobSeekers\\Delete.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-03T06:08:47.593Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\JobSeekers\\Index.cshtml",
+              "RelativeDocumentMoniker": "Jobify\\Views\\JobSeekers\\Index.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\JobSeekers\\Index.cshtml",
+              "RelativeToolTip": "Jobify\\Views\\JobSeekers\\Index.cshtml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-01T16:36:56.085Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\SavedJobs\\Index.cshtml",
+              "RelativeDocumentMoniker": "Jobify\\Views\\SavedJobs\\Index.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\SavedJobs\\Index.cshtml",
+              "RelativeToolTip": "Jobify\\Views\\SavedJobs\\Index.cshtml",
+              "ViewState": "AgIAAKYAAAAAAAAAAAAiwL8AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-02T10:35:55.777Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\Users\\Details.cshtml",
+              "RelativeDocumentMoniker": "Jobify\\Views\\Users\\Details.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\Users\\Details.cshtml",
+              "RelativeToolTip": "Jobify\\Views\\Users\\Details.cshtml",
+              "ViewState": "AgIAAM8AAAAAAAAAAAAiwO0AAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-03T08:50:10.976Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "_JobSeekerLayoutPage.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\Shared\\_JobSeekerLayoutPage.cshtml",
+              "RelativeDocumentMoniker": "Jobify\\Views\\Shared\\_JobSeekerLayoutPage.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\Shared\\_JobSeekerLayoutPage.cshtml",
+              "RelativeToolTip": "Jobify\\Views\\Shared\\_JobSeekerLayoutPage.cshtml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABQAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-01T19:38:52.247Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Jobify\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Jobify\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAJQAAAAAAAAAAAAiwLIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-02T10:15:50.768Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "EditFullUser.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\Users\\EditFullUser.cshtml",
+              "RelativeDocumentMoniker": "Jobify\\Views\\Users\\EditFullUser.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\Users\\EditFullUser.cshtml",
+              "RelativeToolTip": "Jobify\\Views\\Users\\EditFullUser.cshtml",
+              "ViewState": "AgIAAPMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-01T16:28:40.892Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\Admins\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Jobify\\Views\\Admins\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\Admins\\Edit.cshtml",
+              "RelativeToolTip": "Jobify\\Views\\Admins\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-03T08:21:08.091Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\Admins\\Index.cshtml",
+              "RelativeDocumentMoniker": "Jobify\\Views\\Admins\\Index.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\Admins\\Index.cshtml",
+              "RelativeToolTip": "Jobify\\Views\\Admins\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-03T08:21:09.474Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "Jobify\\Views\\Account\\Register.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\Account\\Register.cshtml",
+              "RelativeToolTip": "Jobify\\Views\\Account\\Register.cshtml",
+              "ViewState": "AgIAAPkAAAAAAAAAAAAiwAoBAABaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-03T04:45:41.294Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "_EmployerLayoutPage.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\Shared\\_EmployerLayoutPage.cshtml",
+              "RelativeDocumentMoniker": "Jobify\\Views\\Shared\\_EmployerLayoutPage.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\Shared\\_EmployerLayoutPage.cshtml",
+              "RelativeToolTip": "Jobify\\Views\\Shared\\_EmployerLayoutPage.cshtml",
+              "ViewState": "AgIAAG4AAAAAAAAAAAAiwIQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-01T15:27:29.448Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\Admins\\Details.cshtml",
+              "RelativeDocumentMoniker": "Jobify\\Views\\Admins\\Details.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\Admins\\Details.cshtml",
+              "RelativeToolTip": "Jobify\\Views\\Admins\\Details.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-03T08:21:06.541Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\Admins\\Delete.cshtml",
+              "RelativeDocumentMoniker": "Jobify\\Views\\Admins\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\Admins\\Delete.cshtml",
+              "RelativeToolTip": "Jobify\\Views\\Admins\\Delete.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-03T08:21:05.202Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "JobSeekerDashboardViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\ViewModels\\JobSeekerDashboardViewModel.cs",
+              "RelativeDocumentMoniker": "Jobify\\ViewModels\\JobSeekerDashboardViewModel.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\ViewModels\\JobSeekerDashboardViewModel.cs",
+              "RelativeToolTip": "Jobify\\ViewModels\\JobSeekerDashboardViewModel.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAiwB0AAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-01T19:57:42.492Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\Admins\\Create.cshtml",
+              "RelativeDocumentMoniker": "Jobify\\Views\\Admins\\Create.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\Admins\\Create.cshtml",
+              "RelativeToolTip": "Jobify\\Views\\Admins\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-03T05:26:01.976Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Dashboard.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\Admins\\Dashboard.cshtml",
+              "RelativeDocumentMoniker": "Jobify\\Views\\Admins\\Dashboard.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\Admins\\Dashboard.cshtml",
+              "RelativeToolTip": "Jobify\\Views\\Admins\\Dashboard.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAABVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-01T16:01:24.503Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "JobApplicationDetailViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\ViewModels\\JobApplicationDetailViewModel.cs",
+              "RelativeDocumentMoniker": "Jobify\\ViewModels\\JobApplicationDetailViewModel.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\ViewModels\\JobApplicationDetailViewModel.cs",
+              "RelativeToolTip": "Jobify\\ViewModels\\JobApplicationDetailViewModel.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAA5wCEAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-01T18:52:34.562Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "JobSeekersController.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Controllers\\JobSeekersController.cs",
+              "RelativeDocumentMoniker": "Jobify\\Controllers\\JobSeekersController.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Controllers\\JobSeekersController.cs",
+              "RelativeToolTip": "Jobify\\Controllers\\JobSeekersController.cs",
+              "ViewState": "AgIAAJgAAAAAAAAAAAAkwLcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T05:58:24.146Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "AdminsController.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Controllers\\AdminsController.cs",
+              "RelativeDocumentMoniker": "Jobify\\Controllers\\AdminsController.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Controllers\\AdminsController.cs",
+              "RelativeToolTip": "Jobify\\Controllers\\AdminsController.cs",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAwwHEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T05:01:35.266Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Jobify\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Jobify\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAGUAAAAAAAAAAAAYwHcAAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-01T16:20:50.728Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\JobApplications\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Jobify\\Views\\JobApplications\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\JobApplications\\Edit.cshtml",
+              "RelativeToolTip": "Jobify\\Views\\JobApplications\\Edit.cshtml",
+              "ViewState": "AgIAALgAAAAAAAAAAAAAAMcAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-01T20:26:03.209Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\JobApplications\\Create.cshtml",
+              "RelativeDocumentMoniker": "Jobify\\Views\\JobApplications\\Create.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\JobApplications\\Create.cshtml",
+              "RelativeToolTip": "Jobify\\Views\\JobApplications\\Create.cshtml",
+              "ViewState": "AgIAAM4AAAAAAAAAAAAAANgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-02T11:11:39.029Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "Jobify\\Views\\Account\\Login.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "Jobify\\Views\\Account\\Login.cshtml",
+              "ViewState": "AgIAACMBAAAAAAAAAAAiwDIBAABVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-02T14:22:36.114Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "AccountViewModels.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Models\\AccountViewModels.cs",
+              "RelativeDocumentMoniker": "Jobify\\Models\\AccountViewModels.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Models\\AccountViewModels.cs",
+              "RelativeToolTip": "Jobify\\Models\\AccountViewModels.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAuwDAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T04:56:40.262Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\SavedJobs\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Jobify\\Views\\SavedJobs\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\SavedJobs\\Edit.cshtml",
+              "RelativeToolTip": "Jobify\\Views\\SavedJobs\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-02T14:33:50.074Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\SavedJobs\\Delete.cshtml",
+              "RelativeDocumentMoniker": "Jobify\\Views\\SavedJobs\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\SavedJobs\\Delete.cshtml",
+              "RelativeToolTip": "Jobify\\Views\\SavedJobs\\Delete.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-02T14:34:00.83Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\SavedJobs\\Create.cshtml",
+              "RelativeDocumentMoniker": "Jobify\\Views\\SavedJobs\\Create.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\SavedJobs\\Create.cshtml",
+              "RelativeToolTip": "Jobify\\Views\\SavedJobs\\Create.cshtml",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-02T14:34:02.436Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "CreateApplication.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\JobApplications\\CreateApplication.cshtml",
+              "RelativeDocumentMoniker": "Jobify\\Views\\JobApplications\\CreateApplication.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\JobApplications\\CreateApplication.cshtml",
+              "RelativeToolTip": "Jobify\\Views\\JobApplications\\CreateApplication.cshtml",
+              "ViewState": "AgIAALoAAAAAAAAAAAAAANAAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-02T11:11:37.063Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\JobApplications\\Index.cshtml",
+              "RelativeDocumentMoniker": "Jobify\\Views\\JobApplications\\Index.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\JobApplications\\Index.cshtml",
+              "RelativeToolTip": "Jobify\\Views\\JobApplications\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-02T14:22:02.768Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "JobApplicationsController.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Controllers\\JobApplicationsController.cs",
+              "RelativeDocumentMoniker": "Jobify\\Controllers\\JobApplicationsController.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Controllers\\JobApplicationsController.cs",
+              "RelativeToolTip": "Jobify\\Controllers\\JobApplicationsController.cs",
+              "ViewState": "AgIAABABAAAAAAAAAAAkwDoBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-01T18:36:57.229Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\JobApplications\\Details.cshtml",
+              "RelativeDocumentMoniker": "Jobify\\Views\\JobApplications\\Details.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\JobApplications\\Details.cshtml",
+              "RelativeToolTip": "Jobify\\Views\\JobApplications\\Details.cshtml",
+              "ViewState": "AgIAAAEBAAAAAAAAAAAAAAYBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-01T20:25:54.815Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\JobApplications\\Delete.cshtml",
+              "RelativeDocumentMoniker": "Jobify\\Views\\JobApplications\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\JobApplications\\Delete.cshtml",
+              "RelativeToolTip": "Jobify\\Views\\JobApplications\\Delete.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-02T14:20:37.23Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "EmployerJobApplications.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\JobApplications\\EmployerJobApplications.cshtml",
+              "RelativeDocumentMoniker": "Jobify\\Views\\JobApplications\\EmployerJobApplications.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\JobApplications\\EmployerJobApplications.cshtml",
+              "RelativeToolTip": "Jobify\\Views\\JobApplications\\EmployerJobApplications.cshtml",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAACEAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-01T19:14:23.102Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\JobPosts\\Details.cshtml",
+              "RelativeDocumentMoniker": "Jobify\\Views\\JobPosts\\Details.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\JobPosts\\Details.cshtml",
+              "RelativeToolTip": "Jobify\\Views\\JobPosts\\Details.cshtml",
+              "ViewState": "AgIAAOAAAAAAAAAAAAAAAOcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-01T18:16:39.205Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "Jobify\\Controllers\\UsersController.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "Jobify\\Controllers\\UsersController.cs",
+              "ViewState": "AgIAAJsBAAAAAAAAAAAswLcBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-01T18:27:08.555Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "JobPostViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\ViewModels\\JobPostViewModel.cs",
+              "RelativeDocumentMoniker": "Jobify\\ViewModels\\JobPostViewModel.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\ViewModels\\JobPostViewModel.cs",
+              "RelativeToolTip": "Jobify\\ViewModels\\JobPostViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-01T18:09:36.487Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Jobify\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Jobify\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAQwCoAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T10:33:37.391Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "SavedJobsController.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Controllers\\SavedJobsController.cs",
+              "RelativeDocumentMoniker": "Jobify\\Controllers\\SavedJobsController.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Controllers\\SavedJobsController.cs",
+              "RelativeToolTip": "Jobify\\Controllers\\SavedJobsController.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAYwDYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-01T20:28:30.685Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "EmployersController.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Controllers\\EmployersController.cs",
+              "RelativeDocumentMoniker": "Jobify\\Controllers\\EmployersController.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Controllers\\EmployersController.cs",
+              "RelativeToolTip": "Jobify\\Controllers\\EmployersController.cs",
+              "ViewState": "AgIAALkAAAAAAAAAAAAqwNYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-01T15:18:58.089Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "EmployerDashboardViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\ViewModels\\EmployerDashboardViewModel.cs",
+              "RelativeDocumentMoniker": "Jobify\\ViewModels\\EmployerDashboardViewModel.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\ViewModels\\EmployerDashboardViewModel.cs",
+              "RelativeToolTip": "Jobify\\ViewModels\\EmployerDashboardViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-01T19:04:06.702Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\Resumes\\Create.cshtml",
+              "RelativeDocumentMoniker": "Jobify\\Views\\Resumes\\Create.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\Resumes\\Create.cshtml",
+              "RelativeToolTip": "Jobify\\Views\\Resumes\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-01T19:49:06.231Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "EmployerJobApplicationsViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\ViewModels\\EmployerJobApplicationsViewModel.cs",
+              "RelativeDocumentMoniker": "Jobify\\ViewModels\\EmployerJobApplicationsViewModel.cs",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\ViewModels\\EmployerJobApplicationsViewModel.cs",
+              "RelativeToolTip": "Jobify\\ViewModels\\EmployerJobApplicationsViewModel.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAqwBAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-01T18:54:23.968Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\JobPosts\\Delete.cshtml",
+              "RelativeDocumentMoniker": "Jobify\\Views\\JobPosts\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\JobPosts\\Delete.cshtml",
+              "RelativeToolTip": "Jobify\\Views\\JobPosts\\Delete.cshtml",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-01T16:37:06.078Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "EditProfile.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\Users\\EditProfile.cshtml",
+              "RelativeDocumentMoniker": "Jobify\\Views\\Users\\EditProfile.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\Users\\EditProfile.cshtml",
+              "RelativeToolTip": "Jobify\\Views\\Users\\EditProfile.cshtml",
+              "ViewState": "AgIAAOgAAAAAAAAAAAAewP8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-31T11:23:13.809Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\JobPosts\\Index.cshtml",
+              "RelativeDocumentMoniker": "Jobify\\Views\\JobPosts\\Index.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\JobPosts\\Index.cshtml",
+              "RelativeToolTip": "Jobify\\Views\\JobPosts\\Index.cshtml",
+              "ViewState": "AgIAAPkAAAAAAAAAAAAAAPkAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-01T16:37:09.298Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\JobPosts\\Create.cshtml",
+              "RelativeDocumentMoniker": "Jobify\\Views\\JobPosts\\Create.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\JobPosts\\Create.cshtml",
+              "RelativeToolTip": "Jobify\\Views\\JobPosts\\Create.cshtml",
+              "ViewState": "AgIAAMAAAAAAAAAAAAAAANEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-01T18:12:53.129Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\JobPosts\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Jobify\\Views\\JobPosts\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\JobPosts\\Edit.cshtml",
+              "RelativeToolTip": "Jobify\\Views\\JobPosts\\Edit.cshtml",
+              "ViewState": "AgIAALoAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-01T16:33:55.663Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\Employers\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Jobify\\Views\\Employers\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\Employers\\Edit.cshtml",
+              "RelativeToolTip": "Jobify\\Views\\Employers\\Edit.cshtml",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAACAAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-01T16:32:51.474Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "MyJobs.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\JobPosts\\MyJobs.cshtml",
+              "RelativeDocumentMoniker": "Jobify\\Views\\JobPosts\\MyJobs.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\JobPosts\\MyJobs.cshtml",
+              "RelativeToolTip": "Jobify\\Views\\JobPosts\\MyJobs.cshtml",
+              "ViewState": "AgIAAMoAAAAAAAAAAAAkwOwAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-01T16:31:18.34Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "Profile.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\Users\\Profile.cshtml",
+              "RelativeDocumentMoniker": "Jobify\\Views\\Users\\Profile.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\Users\\Profile.cshtml",
+              "RelativeToolTip": "Jobify\\Views\\Users\\Profile.cshtml",
+              "ViewState": "AgIAAAsBAAAAAAAAAAAkwCYBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-01T16:28:05.367Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "UserFullDetails.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\Users\\UserFullDetails.cshtml",
+              "RelativeDocumentMoniker": "Jobify\\Views\\Users\\UserFullDetails.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\source\\repos\\Jobify\\Jobify\\Views\\Users\\UserFullDetails.cshtml",
+              "RelativeToolTip": "Jobify\\Views\\Users\\UserFullDetails.cshtml",
+              "ViewState": "AgIAAPsAAAAAAAAAAAAkwAgBAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-31T18:52:03.869Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

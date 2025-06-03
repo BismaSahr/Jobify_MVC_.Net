@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Jobify.Models.Resume>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ResumeLink)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UploadedAt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JobSeeker.Gender)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ResumeLink)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UploadedAt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JobSeeker.Gender)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ResumeId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ResumeId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ResumeId })
+        </td>
+    </tr>
+}
+
+</table>

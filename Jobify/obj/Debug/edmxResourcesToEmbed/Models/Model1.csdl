@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="JobifyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="AdminId" />
+    </Key>
+    <Property Name="AdminId" Type="Int32" Nullable="false" />
+    <Property Name="Department" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="User" Relationship="Self.FK__Admins__AdminId__1B0907CE" FromRole="Admins" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="CategoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="JobPosts" Relationship="Self.FK__JobPosts__Catego__239E4DCF" FromRole="Categories" ToRole="JobPosts" />
+  </EntityType>
+  <EntityType Name="Employer">
+    <Key>
+      <PropertyRef Name="EmployerId" />
+    </Key>
+    <Property Name="EmployerId" Type="Int32" Nullable="false" />
+    <Property Name="CompanyName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Website" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Designation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="User" Relationship="Self.FK__Employers__Emplo__182C9B23" FromRole="Employers" ToRole="Users" />
+    <NavigationProperty Name="JobPosts" Relationship="Self.FK__JobPosts__Employ__22AA2996" FromRole="Employers" ToRole="JobPosts" />
+  </EntityType>
+  <EntityType Name="JobApplication">
+    <Key>
+      <PropertyRef Name="ApplicationId" />
+    </Key>
+    <Property Name="ApplicationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="JobId" Type="Int32" Nullable="false" />
+    <Property Name="JobSeekerId" Type="Int32" Nullable="false" />
+    <Property Name="FullName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Skills" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CoverLetter" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ResumeLink" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="AppliedAt" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="JobPost" Relationship="Self.FK__JobApplic__JobId__286302EC" FromRole="JobApplications" ToRole="JobPosts" />
+    <NavigationProperty Name="JobSeeker" Relationship="Self.FK__JobApplic__JobSe__29572725" FromRole="JobApplications" ToRole="JobSeekers" />
+  </EntityType>
+  <EntityType Name="JobPost">
+    <Key>
+      <PropertyRef Name="JobId" />
+    </Key>
+    <Property Name="JobId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EmployerId" Type="Int32" />
+    <Property Name="CategoryId" Type="Int32" />
+    <Property Name="LocationId" Type="Int32" />
+    <Property Name="SalaryRange" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Deadline" Type="DateTime" Precision="0" />
+    <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Category" Relationship="Self.FK__JobPosts__Catego__239E4DCF" FromRole="JobPosts" ToRole="Categories" />
+    <NavigationProperty Name="Employer" Relationship="Self.FK__JobPosts__Employ__22AA2996" FromRole="JobPosts" ToRole="Employers" />
+    <NavigationProperty Name="JobApplications" Relationship="Self.FK__JobApplic__JobId__286302EC" FromRole="JobPosts" ToRole="JobApplications" />
+    <NavigationProperty Name="Location" Relationship="Self.FK__JobPosts__Locati__24927208" FromRole="JobPosts" ToRole="Locations" />
+    <NavigationProperty Name="SavedJobs" Relationship="Self.FK__SavedJobs__JobId__2D27B809" FromRole="JobPosts" ToRole="SavedJobs" />
+  </EntityType>
+  <EntityType Name="JobSeeker">
+    <Key>
+      <PropertyRef Name="JobSeekerId" />
+    </Key>
+    <Property Name="JobSeekerId" Type="Int32" Nullable="false" />
+    <Property Name="Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="JobApplications" Relationship="Self.FK__JobApplic__JobSe__29572725" FromRole="JobSeekers" ToRole="JobApplications" />
+    <NavigationProperty Name="User" Relationship="Self.FK__JobSeeker__JobSe__15502E78" FromRole="JobSeekers" ToRole="Users" />
+    <NavigationProperty Name="Resumes" Relationship="Self.FK__Resumes__JobSeek__31EC6D26" FromRole="JobSeekers" ToRole="Resumes" />
+    <NavigationProperty Name="SavedJobs" Relationship="Self.FK__SavedJobs__JobSe__2E1BDC42" FromRole="JobSeekers" ToRole="SavedJobs" />
+  </EntityType>
+  <EntityType Name="Location">
+    <Key>
+      <PropertyRef Name="LocationId" />
+    </Key>
+    <Property Name="LocationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="JobPosts" Relationship="Self.FK__JobPosts__Locati__24927208" FromRole="Locations" ToRole="JobPosts" />
+  </EntityType>
+  <EntityType Name="Resume">
+    <Key>
+      <PropertyRef Name="ResumeId" />
+    </Key>
+    <Property Name="ResumeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="JobSeekerId" Type="Int32" />
+    <Property Name="ResumeLink" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="UploadedAt" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="JobSeeker" Relationship="Self.FK__Resumes__JobSeek__31EC6D26" FromRole="Resumes" ToRole="JobSeekers" />
+  </EntityType>
+  <EntityType Name="SavedJob">
+    <Key>
+      <PropertyRef Name="SavedJobId" />
+    </Key>
+    <Property Name="SavedJobId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="JobId" Type="Int32" />
+    <Property Name="JobSeekerId" Type="Int32" />
+    <Property Name="SavedAt" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="JobPost" Relationship="Self.FK__SavedJobs__JobId__2D27B809" FromRole="SavedJobs" ToRole="JobPosts" />
+    <NavigationProperty Name="JobSeeker" Relationship="Self.FK__SavedJobs__JobSe__2E1BDC42" FromRole="SavedJobs" ToRole="JobSeekers" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FullName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PasswordHash" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Role" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Admin" Relationship="Self.FK__Admins__AdminId__1B0907CE" FromRole="Users" ToRole="Admins" />
+    <NavigationProperty Name="Employer" Relationship="Self.FK__Employers__Emplo__182C9B23" FromRole="Users" ToRole="Employers" />
+    <NavigationProperty Name="JobSeeker" Relationship="Self.FK__JobSeeker__JobSe__15502E78" FromRole="Users" ToRole="JobSeekers" />
+  </EntityType>
+  <Association Name="FK__Admins__AdminId__1B0907CE">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
+    <End Role="Admins" Type="Self.Admin" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Admins">
+        <PropertyRef Name="AdminId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__JobPosts__Catego__239E4DCF">
+    <End Role="Categories" Type="Self.Category" Multiplicity="0..1" />
+    <End Role="JobPosts" Type="Self.JobPost" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categories">
+        <PropertyRef Name="CategoryId" />
+      </Principal>
+      <Dependent Role="JobPosts">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Employers__Emplo__182C9B23">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
+    <End Role="Employers" Type="Self.Employer" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Employers">
+        <PropertyRef Name="EmployerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__JobPosts__Employ__22AA2996">
+    <End Role="Employers" Type="Self.Employer" Multiplicity="0..1" />
+    <End Role="JobPosts" Type="Self.JobPost" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employers">
+        <PropertyRef Name="EmployerId" />
+      </Principal>
+      <Dependent Role="JobPosts">
+        <PropertyRef Name="EmployerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__JobApplic__JobId__286302EC">
+    <End Role="JobPosts" Type="Self.JobPost" Multiplicity="1" />
+    <End Role="JobApplications" Type="Self.JobApplication" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="JobPosts">
+        <PropertyRef Name="JobId" />
+      </Principal>
+      <Dependent Role="JobApplications">
+        <PropertyRef Name="JobId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__JobApplic__JobSe__29572725">
+    <End Role="JobSeekers" Type="Self.JobSeeker" Multiplicity="1" />
+    <End Role="JobApplications" Type="Self.JobApplication" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="JobSeekers">
+        <PropertyRef Name="JobSeekerId" />
+      </Principal>
+      <Dependent Role="JobApplications">
+        <PropertyRef Name="JobSeekerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__JobPosts__Locati__24927208">
+    <End Role="Locations" Type="Self.Location" Multiplicity="0..1" />
+    <End Role="JobPosts" Type="Self.JobPost" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Locations">
+        <PropertyRef Name="LocationId" />
+      </Principal>
+      <Dependent Role="JobPosts">
+        <PropertyRef Name="LocationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SavedJobs__JobId__2D27B809">
+    <End Role="JobPosts" Type="Self.JobPost" Multiplicity="0..1" />
+    <End Role="SavedJobs" Type="Self.SavedJob" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="JobPosts">
+        <PropertyRef Name="JobId" />
+      </Principal>
+      <Dependent Role="SavedJobs">
+        <PropertyRef Name="JobId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__JobSeeker__JobSe__15502E78">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
+    <End Role="JobSeekers" Type="Self.JobSeeker" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="JobSeekers">
+        <PropertyRef Name="JobSeekerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Resumes__JobSeek__31EC6D26">
+    <End Role="JobSeekers" Type="Self.JobSeeker" Multiplicity="0..1" />
+    <End Role="Resumes" Type="Self.Resume" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="JobSeekers">
+        <PropertyRef Name="JobSeekerId" />
+      </Principal>
+      <Dependent Role="Resumes">
+        <PropertyRef Name="JobSeekerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SavedJobs__JobSe__2E1BDC42">
+    <End Role="JobSeekers" Type="Self.JobSeeker" Multiplicity="0..1" />
+    <End Role="SavedJobs" Type="Self.SavedJob" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="JobSeekers">
+        <PropertyRef Name="JobSeekerId" />
+      </Principal>
+      <Dependent Role="SavedJobs">
+        <PropertyRef Name="JobSeekerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="JobifyEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Admins" EntityType="Self.Admin" />
+    <EntitySet Name="Categories" EntityType="Self.Category" />
+    <EntitySet Name="Employers" EntityType="Self.Employer" />
+    <EntitySet Name="JobApplications" EntityType="Self.JobApplication" />
+    <EntitySet Name="JobPosts" EntityType="Self.JobPost" />
+    <EntitySet Name="JobSeekers" EntityType="Self.JobSeeker" />
+    <EntitySet Name="Locations" EntityType="Self.Location" />
+    <EntitySet Name="Resumes" EntityType="Self.Resume" />
+    <EntitySet Name="SavedJobs" EntityType="Self.SavedJob" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <AssociationSet Name="FK__Admins__AdminId__1B0907CE" Association="Self.FK__Admins__AdminId__1B0907CE">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Admins" EntitySet="Admins" />
+    </AssociationSet>
+    <AssociationSet Name="FK__JobPosts__Catego__239E4DCF" Association="Self.FK__JobPosts__Catego__239E4DCF">
+      <End Role="Categories" EntitySet="Categories" />
+      <End Role="JobPosts" EntitySet="JobPosts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Employers__Emplo__182C9B23" Association="Self.FK__Employers__Emplo__182C9B23">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Employers" EntitySet="Employers" />
+    </AssociationSet>
+    <AssociationSet Name="FK__JobPosts__Employ__22AA2996" Association="Self.FK__JobPosts__Employ__22AA2996">
+      <End Role="Employers" EntitySet="Employers" />
+      <End Role="JobPosts" EntitySet="JobPosts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__JobApplic__JobId__286302EC" Association="Self.FK__JobApplic__JobId__286302EC">
+      <End Role="JobPosts" EntitySet="JobPosts" />
+      <End Role="JobApplications" EntitySet="JobApplications" />
+    </AssociationSet>
+    <AssociationSet Name="FK__JobApplic__JobSe__29572725" Association="Self.FK__JobApplic__JobSe__29572725">
+      <End Role="JobSeekers" EntitySet="JobSeekers" />
+      <End Role="JobApplications" EntitySet="JobApplications" />
+    </AssociationSet>
+    <AssociationSet Name="FK__JobPosts__Locati__24927208" Association="Self.FK__JobPosts__Locati__24927208">
+      <End Role="Locations" EntitySet="Locations" />
+      <End Role="JobPosts" EntitySet="JobPosts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SavedJobs__JobId__2D27B809" Association="Self.FK__SavedJobs__JobId__2D27B809">
+      <End Role="JobPosts" EntitySet="JobPosts" />
+      <End Role="SavedJobs" EntitySet="SavedJobs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__JobSeeker__JobSe__15502E78" Association="Self.FK__JobSeeker__JobSe__15502E78">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="JobSeekers" EntitySet="JobSeekers" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Resumes__JobSeek__31EC6D26" Association="Self.FK__Resumes__JobSeek__31EC6D26">
+      <End Role="JobSeekers" EntitySet="JobSeekers" />
+      <End Role="Resumes" EntitySet="Resumes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SavedJobs__JobSe__2E1BDC42" Association="Self.FK__SavedJobs__JobSe__2E1BDC42">
+      <End Role="JobSeekers" EntitySet="JobSeekers" />
+      <End Role="SavedJobs" EntitySet="SavedJobs" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

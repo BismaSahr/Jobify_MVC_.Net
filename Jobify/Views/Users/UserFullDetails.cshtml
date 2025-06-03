@@ -1,0 +1,269 @@
+﻿@model Jobify.Models.UserProfileViewModel
+
+@{
+    ViewBag.Title = "User Full Details";
+    Layout = "~/Views/Shared/_AdminLayoutPage.cshtml"; // Assuming this is your admin layout
+}
+
+<style>
+    /* General body font and background - consistent with other views */
+    body {
+        font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+        background-color: #f0f2f5; /* A softer, light-grey background */
+    }
+
+    .container {
+        max-width: 800px; /* Adjust max-width for content */
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    /* Enhanced Details Card Styling */
+    .details-card {
+        background-color: #ffffff;
+        border-radius: 12px;
+        padding: 2.5rem; /* Increased padding */
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); /* Softer, more pronounced shadow */
+        border: 1px solid #e0e0e0; /* Subtle border */
+    }
+
+    /* Gradient Header Styling */
+    .gradient-header {
+        background: #4A90E2; /* Blue/Purple gradient */
+        color: white;
+        padding: 1.5rem;
+        border-radius: 8px; /* Slightly less rounded than card to differentiate */
+        margin-top: -2.5rem; /* Pull up to overlap with card top */
+        margin-left: -2.5rem;
+        margin-right: -2.5rem;
+        margin-bottom: 2.5rem; /* Increased bottom margin */
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Shadow for the header */
+    }
+
+        .gradient-header h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 0;
+        }
+
+    /* Details Table Styling */
+    .details-table {
+        width: 100%;
+        border-collapse: collapse; /* Ensure no double borders */
+        margin-bottom: 2rem; /* Space below table */
+    }
+
+        .details-table th,
+        .details-table td {
+            padding: 1rem 0; /* Vertical padding only, remove horizontal from here */
+            text-align: left;
+            border-bottom: 1px solid #eee; /* Light separator line */
+            vertical-align: top; /* Align content to the top */
+        }
+
+        .details-table th {
+            width: 30%; /* Allocate width for labels */
+            font-weight: 600;
+            color: #555;
+            padding-right: 1.5rem; /* Space between label and value */
+        }
+
+        .details-table td {
+            width: 70%; /* Allocate width for values */
+            color: #333;
+        }
+
+        .details-table tr:last-child th,
+        .details-table tr:last-child td {
+            border-bottom: none; /* No border for the last row */
+        }
+
+    /* Action Buttons Styling - consistent with other views */
+    .action-buttons {
+        margin-top: 2.5rem; /* Increased top margin */
+        display: flex;
+        justify-content: flex-start; /* Align buttons to start */
+        gap: 15px; /* Space between buttons */
+        flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+    }
+
+    /* General Button Styling - consistent with other views */
+    .btn-action {
+        border: none;
+        border-radius: 8px;
+        padding: 0.75rem 1.8rem; /* Generous padding */
+        font-size: 1rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        text-decoration: none; /* Remove underline for links acting as buttons */
+        display: inline-flex; /* Align icon and text */
+        align-items: center;
+        justify-content: center;
+    }
+
+    .btn-edit {
+        background: #4A90E2; /* Blue/Purple gradient for primary action */
+        color: white;
+    }
+
+        .btn-edit:hover {
+            background: #fff; /* White background on hover */
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            color: #4A90E2; /* Text color changes to blue on hover */
+            border: 1px solid #4A90E2; /* Add a border matching the hover text color */
+        }
+
+        .btn-edit:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+    .btn-back { /* Reusing .btn-back for consistency */
+        background-color: #fff; /* Light grey background for Back button */
+        color: #4A90E2;
+        border: 1px solid #ccc; /* Border color from your details page */
+    }
+
+        .btn-back:hover {
+            background-color: #4A90E2;
+            border-color: #4A90E2; /* Change border color on hover */
+            color: #fff;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08); /* Lighter shadow for back button */
+        }
+
+        .btn-back:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+    /* Icon within button */
+    .btn-action i {
+        margin-right: 8px;
+    }
+
+    /* Responsive adjustments */
+    @@media (max-width: 767px) {
+        .action-buttons {
+            flex-direction: column; /* Stack buttons vertically */
+            gap: 10px; /* Space between stacked buttons */
+        }
+
+        .btn-action {
+            width: 100%; /* Full width buttons */
+        }
+
+        .details-table th,
+        .details-table td {
+            display: block; /* Stack on small screens */
+            width: 100% !important; /* Full width */
+            padding: 0.5rem 0;
+            text-align: left;
+        }
+
+        .details-table th {
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+            padding-right: 0; /* Remove right padding for stacked layout */
+        }
+    }
+</style>
+
+<div class="container">
+    <div class="details-card">
+        <div class="gradient-header">
+            <h3 class="mb-0">
+                <i class="fas fa-user-circle me-2"></i> User Full Details
+            </h3>
+        </div>
+
+        <table class="details-table">
+            <tr>
+                <th>Full Name</th>
+                <td>@Model.FullName</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>@Model.Email</td>
+            </tr>
+            <tr>
+                <th>Phone</th>
+                <td>@Model.Phone</td>
+            </tr>
+            <tr>
+                <th>Role</th>
+                <td>@Model.Role</td>
+            </tr>
+            <tr>
+                <th>Created At</th>
+                <td>@Model.CreatedAt?.ToString("MMMM dd, yyyy hh:mm tt")</td>
+            </tr>
+
+            @if (Model.Role == "Admin")
+            {
+                <tr>
+                    <th>Department</th>
+                    <td>@Model.Department</td>
+                </tr>
+            }
+            else if (Model.Role == "Employer")
+            {
+                <tr>
+                    <th>Company Name</th>
+                    <td>@Model.CompanyName</td>
+                </tr>
+                <tr>
+                    <th>Website</th>
+                    <td>
+                        @if (!string.IsNullOrEmpty(Model.Website))
+                        {
+                            <a href="@(Model.Website.StartsWith("http") ? Model.Website : "http://" + Model.Website)" target="_blank">@Model.Website</a>
+                        }
+                        else
+                        {
+                            @:N/A
+                        }
+                    </td>
+                </tr>
+                <tr>
+                    <th>Address</th>
+                    <td>@Model.Address</td>
+                </tr>
+            
+            }
+            else if (Model.Role == "JobSeeker")
+            {
+                <tr>
+                    <th>Gender</th>
+                    <td>@Model.Gender</td>
+                </tr>
+                <tr>
+                    <th>Date of Birth</th>
+                    <td>@Model.DateOfBirth?.ToString("MMMM dd, yyyy")</td>
+                </tr>
+            }
+        </table>
+
+        <div class="action-buttons">
+            <a href="@Url.Action("EditFullUser", new { id = Model.UserId })" class="btn-action btn-edit">
+                <i class="fas fa-edit"></i> Edit User
+            </a>
+       
+
+
+
+                 <a href="@Url.Action("Index", "Users")" class="btn-action btn-back">
+                     <i class="fas fa-arrow-alt-circle-left"></i> Back
+                     
+                 </a>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+}

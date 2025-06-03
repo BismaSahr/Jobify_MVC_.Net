@@ -1,0 +1,158 @@
+﻿@model List<Jobify.ViewModels.JobApplicationDetailViewModel>
+
+@{
+    ViewBag.Title = "My Applications";
+}
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+<style>
+    /* Styling for JobSeekerApplications view */
+    .h-100 {
+        height: 100%;
+    }
+
+    .card-title {
+        font-weight: bold;
+    }
+
+    .card-text {
+        font-size: 0.95em;
+    }
+
+    .mt-2 {
+        margin-top: 0.5rem;
+    }
+
+    .ms-2 {
+        margin-left: 0.5rem;
+    }
+
+    .my-4 {
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* General Button Styling (reusing principles from User Details page's btn-action) */
+    .btn-action {
+        border: none; /* Buttons will define their own borders */
+        border-radius: 8px; /* Consistent border radius */
+        padding: 0.75rem 1.8rem; /* Generous padding */
+        font-size: 1rem;
+        font-weight: 600;
+        transition: all 0.3s ease; /* Smooth transition for hover effects */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        text-decoration: none; /* Remove underline for links acting as buttons */
+        display: inline-flex; /* Align icon and text */
+        align-items: center;
+        justify-content: center;
+        min-width: 80px; /* Keep a minimum width */
+    }
+
+    /* Style for "View/Download Resume" button */
+    .btn-download-resume {
+        background-color: #28a745; /* Green background for success/download */
+        color: white;
+        border: 1px solid #28a745; /* Green border */
+    }
+
+        .btn-download-resume:hover {
+            background-color: white;
+            color: #28a745;
+            border-color: #28a745;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-download-resume:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+    /* Style for "Full Application Details" button (similar to btn-details from Browse Jobs) */
+    .btn-application-details {
+        background-color: #4A90E2; /* Theme blue background */
+        color: white;
+        border: 1px solid #4A90E2;
+    }
+
+        .btn-application-details:hover {
+            background-color: white;
+            color: #4A90E2;
+            border-color: #4A90E2;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-application-details:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+    /* Style for "View Job Post" button (similar to btn-back from User Details) */
+    .btn-view-job-post {
+        background-color: white; /* White background */
+        color: #4A90E2; /* Theme blue text */
+        border: 1px solid #4A90E2; /* Theme blue border */
+    }
+
+        .btn-view-job-post:hover {
+            background-color: #4A90E2;
+            color: white;
+            border-color: #4A90E2;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-view-job-post:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+</style>
+
+<h1 class="text-center my-4" style="color: #4A90E2;">Applications Submitted by @ViewBag.JobSeekerName</h1>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info text-center" role="alert">
+        You haven't submitted any job applications yet.
+    </div>
+}
+else
+{
+    <div class="row">
+        @foreach (var application in Model)
+        {
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body">
+                       <h5 class="card-title" style="color: #4A90E2;"><strong>Title:</strong> @application.JobTitle</h5>
+                        <p class="card-text">
+                            <strong>Category:</strong> @application.JobCategoryName<br />
+                            <strong>Location:</strong> @application.JobLocationName<br />
+                            <strong>Applied On:</strong> @application.AppliedAt.ToString("g")<br />
+                            <strong>Job Posted:</strong> @application.JobCreatedAt)
+                        </p>
+                        <hr />
+                        <h6>Your Application Details:</h6>
+                        <p>
+                            <strong>Name:</strong> @application.FullName<br />
+                            <strong>Email:</strong> @application.Email<br />
+                            <strong>Phone:</strong> @application.Phone<br />
+                            <strong>Skills:</strong> @application.Skills
+                        </p>
+                        @if (!string.IsNullOrEmpty(application.CoverLetter))
+                        {
+                            <p><strong>Cover Letter:</strong> @application.CoverLetter</p>
+                        }
+                        @if (!string.IsNullOrEmpty(application.ResumeLink))
+                        {
+                            <a href="@application.ResumeLink" target="_blank" class="btn btn-action btn-download-resume btn-sm mt-2">View/Download Resume</a>
+                        }
+                        <a href="@Url.Action("Details", "JobApplications", new { id = application.ApplicationId })" class="btn btn-action btn-application-details btn-sm mt-2 ms-2">Full Application Details</a>
+                        <a href="@Url.Action("Details", "JobPosts", new { id = application.JobId })" class="btn btn-action btn-view-job-post btn-sm mt-2 ms-2">View Job Post</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}

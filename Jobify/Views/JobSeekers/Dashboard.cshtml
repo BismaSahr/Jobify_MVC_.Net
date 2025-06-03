@@ -1,0 +1,223 @@
+﻿@model Jobify.ViewModels.JobSeekerDashboardViewModel
+
+@{
+    ViewBag.Title = "My Dashboard";
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<h2 class="text-center dashboard-main-title" style="color: #4A90E2">Welcome, @Session["FullName"]!</h2>
+
+<div class="row text-center mb-4">
+    <div class="col-md-4">
+        <div class="card text-white shadow p-3 rounded" style="background-color: rgba(255, 99, 132, 0.6);">
+            <a href="@Url.Action("Index", "SavedJobs")" class="text-white text-decoration-none">
+                <h4>Saved Jobs</h4>
+                <h2><i class="fas fa-bookmark"></i></h2>
+            </a>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-white shadow p-3 rounded" style="background-color: rgba(54, 162, 235, 0.6);">
+            <a href="@Url.Action("JobSeekerApplications", "JobApplications")" class="text-white text-decoration-none">
+                <h4>Total Applications</h4>
+                <h2>@Model.TotalApplications</h2>
+            </a>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-white shadow p-3 rounded" style="background-color: rgba(255, 206, 86, 0.6);">
+            <a href="@Url.Action("Index", "Home")" class="text-white text-decoration-none">
+                <h4>Browse Jobs</h4>
+                <h2><i class="fas fa-search"></i></h2>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="row mb-4">
+    <div class="col-md-7">
+        
+            <div style="height: 480px;">
+                <canvas id="applicationsTrendChart"></canvas>
+            </div>
+            <div class="text-center mt-3">
+                <button class="btn btn-info btn-sm" onclick="updateApplicationsTrendChart('week')">Last 7 Days</button>
+                <button class="btn btn-info btn-sm" onclick="updateApplicationsTrendChart('month')">Last 30 Days</button>
+            </div>
+        
+    </div>
+
+    <div class="col-md-5">
+      
+            <div style="width: 480px; height: 480px;">
+                <canvas id="jobSeekerOverallSummaryChart"></canvas>
+            </div>
+            @*<h5 class="text-center mb-2">Application Status Summary</h5>
+            <div style="height: 300px;">
+                <canvas id="jobSeekerOverallSummaryChart"></canvas>
+            </div>*@
+     
+    </div>
+</div>
+
+@*<div class="row mb-4">
+    <div class="col-md-8 offset-md-2">
+        <div class="card p-3 shadow rounded">
+            <h5 class="text-center mb-2">Application Status Summary</h5>
+            <div style="height: 300px;">
+                <canvas id="applicationStatusChart"></canvas>
+            </div>
+        </div>
+    </div>
+</div>*@
+
+
+
+    <div class="d-flex justify-content-center mb-4">
+        <div class="card p-3 shadow rounded">
+            <h3 class="p-2 rounded-top text-white" style="background-color: #4A90E2;">
+                <i class="fas fa-user"></i> My Full Profile
+            </h3>
+            <div class="p-3 text-center">
+                <p><strong>Full Name:</strong> @Model.JobSeekerDetails.User.FullName</p>
+                <p><strong>Email:</strong> @Model.JobSeekerDetails.User.Email</p>
+                <p><strong>Phone:</strong> @Model.JobSeekerDetails.User.Phone</p>
+                <p><strong>Gender:</strong> @Model.JobSeekerDetails.Gender</p>
+                <p><strong>Date of Birth:</strong> @(Model.JobSeekerDetails.DateOfBirth?.ToShortDateString() ?? "N/A")</p>
+                <a href="@Url.Action("EditProfile", "Users")" class="btn btn-edit-profile mt-3">Edit Profile</a>
+            </div>
+        </div>
+    </div>
+
+   
+
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        var applicationsByWeekLabels = @Html.Raw(Json.Encode(Model.ApplicationsByWeekLabels));
+        var applicationsByWeekData = @Html.Raw(Json.Encode(Model.ApplicationsByWeekData));
+        var applicationsByMonthLabels = @Html.Raw(Json.Encode(Model.ApplicationsByMonthLabels));
+        var applicationsByMonthData = @Html.Raw(Json.Encode(Model.ApplicationsByMonthData));
+
+        var applicationsTrendChart = new Chart(document.getElementById('applicationsTrendChart'), {
+            type: 'bar',
+            data: {
+                labels: applicationsByWeekLabels,
+                datasets: [{
+                    label: 'Applications',
+                    data: applicationsByWeekData,
+                    backgroundColor: "rgba(0, 123, 255, 0.7)"
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Applications in Last 7 Days'
+                    }
+                },
+                scales: {
+                    y: { beginAtZero: true, ticks: { precision: 0 } }
+                }
+            }
+        });
+
+        function updateApplicationsTrendChart(period) {
+            if (period === 'week') {
+                applicationsTrendChart.data.labels = applicationsByWeekLabels;
+                applicationsTrendChart.data.datasets[0].data = applicationsByWeekData;
+                applicationsTrendChart.options.plugins.title.text = 'Applications in Last 7 Days';
+            } else {
+                applicationsTrendChart.data.labels = applicationsByMonthLabels;
+                applicationsTrendChart.data.datasets[0].data = applicationsByMonthData;
+                applicationsTrendChart.options.plugins.title.text = 'Applications in Last 30 Days';
+            }
+            applicationsTrendChart.update();
+        }
+
+        new Chart(document.getElementById('applicationStatusChart'), {
+            type: 'pie',
+            data: {
+                labels: @Html.Raw(Json.Encode(Model.ApplicationStatusLabels)),
+                datasets: [{
+                    data: @Html.Raw(Json.Encode(Model.ApplicationStatusData)),
+                    backgroundColor: [
+                        "rgba(255, 99, 132, 0.6)",
+                        "rgba(54, 162, 235, 0.6)",
+                        "rgba(255, 206, 86, 0.6)",
+                        "rgba(75, 192, 192, 0.6)",
+                        "rgba(153, 102, 255, 0.6)"
+                    ]
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Application Status Breakdown'
+                    }
+                }
+            }
+        });
+
+        // Changed 'type' from 'doughnut' to 'pie'
+        new Chart(document.getElementById('jobSeekerOverallSummaryChart'), {
+            type: 'pie', // <--- CHANGED FROM 'doughnut' TO 'pie'
+            data: {
+                labels: ['Total Available Job Posts', 'Your Total Applications'],
+                datasets: [{
+                    data: [@Model.TotalAvailableJobPosts, @Model.TotalApplications],
+                    backgroundColor: [
+                        "rgba(54, 162, 235, 0.6)", // Orange
+                        "rgba(255, 99, 132, 0.6)"  // Blue
+                    ]
+                    
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true, // It's usually best to maintain aspect ratio for pie/doughnut charts
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Your Application Activity vs. Available Jobs'
+                    }
+                }
+            }
+        });
+    </script>
+}
+
+<style>
+    .btn-edit-profile {
+        background-color: #4A90E2; /* Match the card header theme color */
+        color: white;
+        border: 1px solid rgba(0, 123, 255, 0.7);
+        padding: 0.75rem 1.5rem; /* Larger padding for a more "eye-catching" feel */
+        font-size: 1.1rem; /* Slightly larger font */
+        font-weight: bold; /* Make the text bolder */
+        transition: all 0.3s ease; /* Smooth transition for hover effects */
+        border-radius: 0.35rem; /* Consistent border radius */
+        display: inline-block; /* Ensure it respects text-align */
+        text-decoration: none; /* Remove underline from anchor tag */
+    }
+
+        .btn-edit-profile:hover {
+            background-color: white; /* Background becomes white on hover */
+            color: #4A90E2; /* Text color matches theme on hover */
+            border-color: rgba(0, 123, 255, 0.7); /* Border color matches theme on hover */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
+            text-decoration: none; /* Keep no underline on hover */
+        }
+</style>

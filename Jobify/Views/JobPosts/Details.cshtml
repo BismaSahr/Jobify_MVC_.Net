@@ -1,0 +1,269 @@
+﻿@model Jobify.Models.JobPost
+
+@{
+    ViewBag.Title = "Job Post Details";
+}
+
+<style>
+    /* General body font and background */
+    body {
+        font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+        background-color: #f0f2f5;
+    }
+
+    .container {
+        max-width: 800px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    /* Enhanced Details Card Styling */
+    .details-card {
+        background-color: #ffffff;
+        border-radius: 12px;
+        padding: 2.5rem;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        border: 1px solid #e0e0e0;
+    }
+
+    /* Gradient Header Styling */
+    .gradient-header {
+        background: #4A90E2;
+        color: white;
+        padding: 1.5rem;
+        border-radius: 8px;
+        margin-top: -2.5rem;
+        margin-left: -2.5rem;
+        margin-right: -2.5rem;
+        margin-bottom: 2.5rem;
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .gradient-header h3 {
+        font-size: 1.8rem;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        margin-bottom: 0;
+    }
+
+    /* Definition List (dl) Styling */
+    .dl-horizontal {
+        margin-bottom: 0;
+    }
+
+    .dl-horizontal dt, .dl-horizontal dd {
+        padding: 0.75rem 0;
+        line-height: 1.5;
+    }
+
+    .dl-horizontal dt {
+        font-weight: 600;
+        color: #333;
+        width: 180px;
+        float: left;
+        clear: left;
+        text-align: right;
+        padding-right: 20px;
+    }
+
+    .dl-horizontal dd {
+        margin-left: 200px;
+        color: #555;
+        border-bottom: 1px dashed #eee;
+    }
+
+    .dl-horizontal dd:last-child {
+        border-bottom: none;
+    }
+
+    /* Action Buttons Styling */
+    .action-buttons {
+        margin-top: 2.5rem;
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    /* General Button Styling */
+    .btn-action {
+        border: none;
+        border-radius: 8px;
+        padding: 0.75rem 1.8rem;
+        font-size: 1rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    .btn-edit {
+        background: #4A90E2;
+        color: white;
+    }
+
+    .btn-edit:hover {
+        background: #fff;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        color: #4A90E2;
+    }
+
+    .btn-edit:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-back {
+        background-color: #fff;
+        color: #4A90E2;
+        border: 1px solid #ccc;
+    }
+
+    .btn-back:hover {
+        background-color: #4A90E2;
+        border-color: #b0b0b0;
+        color: #fff;
+        transform: translateY(-1px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    .btn-back:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+
+    .btn-action i {
+        margin-right: 8px;
+    }
+
+    /* Responsive adjustments */
+    media (max-width: 767px) {
+        .dl-horizontal dt, .dl-horizontal dd {
+            float: none;
+            width: auto;
+            text-align: left;
+            margin-left: 0;
+            padding-right: 0;
+            border-bottom: none;
+        }
+
+        .dl-horizontal dt {
+            margin-top: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .dl-horizontal dd {
+            margin-bottom: 0.5rem;
+        }
+
+        .dl-horizontal dd + dt {
+            margin-top: 1.5rem;
+        }
+
+        .dl-horizontal dd:not(:last-child) {
+            border-bottom: 1px dashed #eee;
+            padding-bottom: 0.75rem;
+        }
+
+        .action-buttons {
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .btn-action {
+            width: 100%;
+        }
+    }
+
+    /* Inline message styling */
+    #applyMessage {
+        margin-top: 1rem;
+        font-weight: 600;
+    }
+
+    #applyMessage.success {
+        color: green;
+    }
+
+    #applyMessage.error {
+        color: red;
+    }
+</style>
+
+<div class="container">
+    <div class="details-card">
+        <div class="gradient-header">
+            <h3 class="mb-0">
+                <i class="fas fa-briefcase me-2"></i> Job Post Details
+            </h3>
+        </div>
+
+        <dl class="dl-horizontal">
+            <dt>@Html.DisplayNameFor(m => m.Title)</dt>
+            <dd>@Html.DisplayFor(m => m.Title)</dd>
+
+            <dt>@Html.DisplayNameFor(m => m.Description)</dt>
+            <dd>@Html.DisplayFor(m => m.Description)</dd>
+
+            <dt>@Html.DisplayNameFor(m => m.SalaryRange)</dt>
+            <dd>@Html.DisplayFor(m => m.SalaryRange)</dd>
+
+            <dt>@Html.DisplayNameFor(m => m.Deadline)</dt>
+            <dd>@Html.DisplayFor(m => m.Deadline)</dd>
+
+            <dt>@Html.DisplayNameFor(m => m.CreatedAt)</dt>
+            <dd>@Html.DisplayFor(m => m.CreatedAt)</dd>
+
+            <dt>@Html.DisplayNameFor(m => m.Category.CategoryName)</dt>
+            <dd>@Html.DisplayFor(m => m.Category.CategoryName)</dd>
+
+            <dt>@Html.DisplayNameFor(m => m.Employer.CompanyName)</dt>
+            <dd>@Html.DisplayFor(m => m.Employer.CompanyName)</dd>
+
+            <dt>@Html.DisplayNameFor(m => m.Location.City)</dt>
+            <dd>@Html.DisplayFor(m => m.Location.City)</dd>
+        </dl>
+
+        @{
+            var role = Session["Role"] as string;
+        }
+
+    <div class="action-buttons">
+        @if (role == "Admin")
+        {
+            @Html.ActionLink("Edit", "Edit", new { id = Model.JobId }, new { @class = "btn-action btn-edit" })
+        }
+        else if (role == "JobSeeker")
+        {
+
+            @*@Html.AntiForgeryToken()
+            @Html.HiddenFor(m => m.JobId)
+
+            <button type="submit" class="btn-action btn-back">
+                <i class="fas fa-arrow-left"></i> Apply
+            </button>*@
+             <a href="@Url.Action("CreateApplication", "JobApplications", new { jobId = Model.JobId })" class="btn-action btn-back">
+                <i class="fas fa-apply"></i> Apply
+            </a>
+        }
+        @*else
+        {
+            <a href="@Url.Action("Index", "JobPosts")" class="btn-action btn-back">
+                <i class="fas fa-arrow-left"></i> Back to All Jobs
+            </a>
+        }*@
+    </div>
+
+       
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+}

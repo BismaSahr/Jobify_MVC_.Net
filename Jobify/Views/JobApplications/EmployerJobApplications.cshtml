@@ -1,0 +1,88 @@
+﻿@model Jobify.ViewModels.EmployerJobApplicationsViewModel
+
+@{
+    ViewBag.Title = "Employer Dashboard - My Job Applications";
+}
+
+<h2 class="text-center my-4">Applications for @Model.EmployerName's Jobs</h2>
+
+@if (!Model.GroupedJobApplications.Any())
+{
+    <div class="alert alert-info text-center" role="alert">
+        You haven't received any job applications yet.
+    </div>
+}
+else
+{
+    foreach (var jobGroup in Model.GroupedJobApplications)
+    {
+        <div class="card mb-4 shadow-sm">
+            <div class="card-header bg-primary text-white">
+                <h4 class="my-0 font-weight-normal">
+                    @jobGroup.JobTitle
+                    <small class="text-white-50 ms-2">(@jobGroup.TotalApplications Applications)</small>
+                </h4>
+            </div>
+            <div class="card-body">
+                <p><strong>Category:</strong> @jobGroup.CategoryName</p>
+                <p><strong>Location:</strong> @jobGroup.LocationName</p>
+                <p><strong>Posted On:</strong> @jobGroup.CreatedAt</p>
+                <a href="@Url.Action("Details", "JobPosts", new { id = jobGroup.JobId })" class="btn btn-outline-primary btn-sm">View Job Details</a>
+
+                <h5 class="mt-4">Applicants for this Job:</h5>
+                @if (!jobGroup.Applications.Any())
+                {
+                    <p>No applications for this specific job.</p>
+                }
+                else
+                {
+                    <ul class="list-group list-group-flush">
+                        @foreach (var application in jobGroup.Applications)
+                        {
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <div>
+                                    <strong>@application.FullName</strong>
+                                    <br />
+                                    <small>Email: @application.Email | Phone: @application.Phone</small>
+                                    <br />
+                                    <small>Applied: @application.AppliedAt.ToString("g")</small>
+                                </div>
+                                <div class="btn-group" role="group">
+                                    <a href="@Url.Action("Details", "JobApplications", new { id = application.ApplicationId })" class="btn btn-info btn-sm">View Application</a>
+                                    @if (!string.IsNullOrEmpty(application.ResumeLink))
+                                    {
+                                        <a href="@application.ResumeLink" target="_blank" class="btn btn-success btn-sm ms-2">Download Resume</a>
+                                    }
+                                </div>
+                            </li>
+                        }
+                    </ul>
+                }
+            </div>
+        </div>
+    }
+}
+
+<style>
+    .card {
+        border-radius: 8px;
+    }
+
+    .card-header {
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+    }
+
+    .list-group-item {
+        border-color: #eee;
+    }
+
+    .ms-2 {
+        margin-left: 0.5rem;
+    }
+    /* Bootstrap spacing utility */
+    .my-4 {
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+</style>

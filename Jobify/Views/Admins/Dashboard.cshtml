@@ -1,0 +1,116 @@
+﻿@{
+    ViewBag.Title = "Admin Dashboard";
+}
+
+<h2 class="text-center mb-4 dashboard-main-title">Welcome, @Session["FullName"]!</h2>
+
+<div class="row text-center mb-4">
+    <div class="col-md-4">
+        <div class="card text-white shadow p-3 rounded" style="background-color: rgba(255, 99, 132, 0.6);">
+           
+            <a href="@Url.Action("Index", "Users")" class="text-white text-decoration-none">
+                <h4>Total Users</h4>
+                <h2>@ViewBag.TotalUsers</h2>
+            </a>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-white shadow p-3 rounded" style="background-color: rgba(54, 162, 235, 0.6);">
+
+            <a href="@Url.Action("Index", "JobPosts")" class="text-white text-decoration-none">
+                <h4>Total Job Posts</h4>
+                <h2>@ViewBag.TotalJobPosts</h2>
+            </a>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-white shadow p-3 rounded" style="background-color: rgba(255, 206, 86, 0.6);">
+          
+            <a href="@Url.Action("Index", "JobApplications")" class="text-white text-decoration-none">
+                <h4>Total Applications</h4>
+                <h2>@ViewBag.TotalApplications</h2>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-7">
+        <canvas id="jobChart"></canvas>
+    </div>
+    <div class="col-md-5">
+        <div style="width: 480px; height: 480px;">
+            <canvas id="usersChart"></canvas>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Use Razor to convert the int[] into JS array for Job Posts
+        var monthlyJobPosts = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(ViewBag.MonthlyJobPosts));
+        var monthlyJobPostLabels = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(ViewBag.MonthlyJobPostLabels));
+
+        // Use Razor to create the array for user roles counts
+        var userCounts = [
+            @ViewBag.AdminCount,
+            @ViewBag.EmployerCount,
+            @ViewBag.JobSeekerCount
+        ];
+
+        new Chart(document.getElementById("jobChart"), {
+            type: 'bar',
+            data: {
+                labels: monthlyJobPostLabels, // Use the dynamic labels here
+                datasets: [{
+                    label: "Job Posts",
+                    data: monthlyJobPosts,
+                    backgroundColor: "rgba(0, 123, 255, 0.7)"
+                }]
+            },
+            options: { // Add options for better responsiveness and scaling
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            precision: 0 // Ensure whole numbers for counts
+                        }
+                    }
+                }
+            }
+        });
+
+        new Chart(document.getElementById("usersChart"), {
+            type: 'pie',
+            data: {
+                labels: ["Admins", "Employers", "JobSeekers"],
+                datasets: [{
+                    data: userCounts,
+                    backgroundColor: [
+                        "rgba(255, 99, 132, 0.6)",
+                        "rgba(54, 162, 235, 0.6)",
+                        "rgba(255, 206, 86, 0.6)"
+                    ]
+                }]
+            },
+            options: { // Add options for better responsiveness and scaling
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+    </script>
+}
+
+<style>
+    .dashboard-main-title {
+        color: var(--primary-brand-color-dark); /* Using darker shade for main title */
+        font-weight: 700;
+        margin-bottom: 2rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid #e9ecef;
+    }
+
+</style>

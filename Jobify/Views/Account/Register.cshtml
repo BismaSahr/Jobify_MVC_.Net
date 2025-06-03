@@ -1,0 +1,283 @@
+﻿@using Jobify.ViewModels
+@model Jobify.ViewModels.RegisterViewModel
+
+@{
+    ViewBag.Title = "Register";
+    Layout = null; // As with Login, we manage layout directly or via a custom layout
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Jobify</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <style>
+        /* Custom styles to achieve the reference image look. */
+
+        :root {
+            --dark-blue: #3498db; /* A strong dark blue */
+            --light-blue: #5faee7; /* A lighter blue, for accents if needed, adjusted slightly darker than pure white for better hover */
+            --white: #ffffff;
+            --light-grey: #ecf0f1; /* For subtle backgrounds or borders */
+            --text-dark: #333333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light-grey);
+            display: flex; /* Added for centering the wrapper */
+            justify-content: center; /* Added for centering the wrapper */
+            align-items: center; /* Added for centering the wrapper */
+            min-height: 100vh; /* Ensures body takes full viewport height */
+            margin: 0;
+        }
+
+        /* Main Container for the entire card */
+        .auth-container-wrapper { /* Consistent naming with login-container-wrapper */
+            display: flex;
+            background-color: var(--white);
+            border-radius: 15px; /* Rounded corners for the whole card */
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Soft shadow */
+            overflow: hidden; /* Ensures inner rounded corners are visible */
+            max-width: 900px; /* Adjust as needed */
+            width: 95%;
+        }
+
+        .left-panel, .right-panel {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* Styling for the left panel (Hello Friend! section) */
+        .left-panel { /* This will be the blue panel for Register */
+            flex: 1; /* Takes equal space or adjusted */
+            background-color: var(--dark-blue); /* Blue background */
+            color: var(--white);
+            border-top-left-radius: 15px; /* Consistent rounded corners */
+            border-bottom-left-radius: 15px; /* Consistent rounded corners */
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.2); /* Inner shadow for depth */
+        }
+
+            .left-panel h2 {
+                font-size: 2.2em;
+                margin-bottom: 15px;
+                font-weight: 600;
+                color: var(--white);
+            }
+
+            .left-panel p {
+                font-size: 1.1em;
+                line-height: 1.6;
+                margin-bottom: 30px;
+                opacity: 0.9;
+                color: var(--white);
+            }
+
+        .btn-secondary-custom { /* Reusing the secondary button style for "SIGN IN" */
+            background-color: var(--white);
+            color: var(--dark-blue);
+            padding: 12px 30px;
+            border: 2px solid var(--white);
+            border-radius: 25px; /* Pill-shaped button */
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+            text-decoration: none; /* For ActionLink */
+        }
+
+            .btn-secondary-custom:hover {
+                background-color: #e0e0e0;
+                color: var(--dark-blue);
+                border-color: #e0e0e0;
+            }
+
+
+        /* Right Panel - Register Form */
+        .right-panel { /* This will be the white panel for Register */
+            flex: 1.5; /* Takes more space for the form */
+            padding: 40px 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start; /* Align text to the left */
+        }
+
+            .right-panel h2.form-title {
+                font-size: 2.5em;
+                color: var(--text-dark);
+                margin-bottom: 10px;
+                font-weight: 600;
+                width: 100%;
+                text-align: left;
+            }
+
+            .right-panel p.form-subtitle {
+                font-size: 0.9em;
+                color: #777;
+                margin-bottom: 30px;
+                width: 100%;
+                text-align: left;
+            }
+
+            .right-panel .form-group {
+                margin-bottom: 20px;
+                width: 100%;
+            }
+
+            .right-panel label {
+                display: block;
+                margin-bottom: 8px;
+                color: var(--text-dark);
+                font-weight: 600;
+                font-size: 1em;
+                text-align: left;
+            }
+
+            .right-panel .form-control {
+                width: 100%;
+                padding: 12px 15px;
+                border: 1px solid var(--light-grey);
+                border-radius: 8px;
+                font-size: 1em;
+                box-sizing: border-box;
+            }
+
+                .right-panel .form-control:focus {
+                    border-color: var(--dark-blue);
+                    outline: none;
+                    box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+                }
+
+            .right-panel .text-danger {
+                font-size: 0.85em;
+                margin-top: 5px;
+                display: block;
+                text-align: left;
+            }
+
+            .right-panel .btn-primary-custom { /* Using the primary button style for "REGISTER" */
+                background-color: var(--dark-blue);
+                color: var(--white);
+                border: none;
+                padding: 12px 40px;
+                border-radius: 8px; /* Matching input fields */
+                font-size: 1.1em;
+                font-weight: 600;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+                width: 100%;
+                margin-top: 30px;
+            }
+
+                .right-panel .btn-primary-custom:hover {
+                    background-color: var(--light-blue);
+                }
+
+        /* Hide unwanted elements from original code */
+        #registerForm h4,
+        #registerForm hr {
+            display: none;
+        }
+
+        /* Responsive adjustments */
+        @@media (max-width: 767.98px) {
+            .auth-container-wrapper {
+                flex-direction: column;
+                max-width: 400px;
+            }
+
+            .left-panel,
+            .right-panel {
+                padding: 30px;
+                border-radius: 0 !important;
+            }
+
+            .left-panel { /* This is the blue panel for Register, so it should be on top in mobile */
+                border-top-left-radius: 15px !important;
+                border-top-right-radius: 15px !important;
+                border-bottom-left-radius: 0 !important;
+                order: -1; /* Place left panel on top in mobile */
+            }
+
+            .right-panel { /* This is the white form panel for Register, so it should be on bottom in mobile */
+                border-bottom-left-radius: 15px !important;
+                border-bottom-right-radius: 15px !important;
+            }
+
+            .form-group, .btn-primary-custom, .btn-secondary-custom {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-container-wrapper">
+        <div class="left-panel">
+            <h2>Welcome to Jobify!</h2>
+            <p>Register with your personal details to use all of Jobify's site features</p>
+            @Html.ActionLink("SIGN IN", "Login", "Account", null, new { @class = "btn-secondary-custom" })
+        </div>
+
+        <div class="right-panel">
+            <h2 class="form-title">Create Account</h2>
+            <p class="form-subtitle">Register using your email and password</p>
+
+            <section id="registerForm" style="width: 100%;">
+                @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { role = "form", style = "width: 100%;" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary("", new { @class = "text-danger" })
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.FullName)
+                        @Html.TextBoxFor(m => m.FullName, new { @class = "form-control", placeholder = "Full Name" })
+                        @Html.ValidationMessageFor(m => m.FullName, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Email)
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Email" })
+                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Password)
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Password" })
+                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.ConfirmPassword)
+                        @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", placeholder = "Confirm Password" })
+                        @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Role)
+                        @Html.DropDownListFor(m => m.Role,
+                            new SelectList(new List<string> { "JobSeeker", "Employer" }), 
+                            "Select Role",
+                            new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Role, "", new { @class = "text-danger" })
+                    </div>
+
+                    <input type="submit" value="REGISTER" class="btn-primary-custom" />
+                }
+            </section>
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jqueryval")
+</body>
+</html>

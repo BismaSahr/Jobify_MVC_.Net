@@ -1,0 +1,96 @@
+﻿@model Jobify.Models.JobApplication
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>JobApplication</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Skills)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Skills)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CoverLetter)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CoverLetter)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ResumeLink)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ResumeLink)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AppliedAt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AppliedAt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JobPost.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobPost.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JobSeeker.Gender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobSeeker.Gender)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

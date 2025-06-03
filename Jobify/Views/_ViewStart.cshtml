@@ -1,0 +1,26 @@
+﻿@{
+    var userRole = ""; // You can get this from session or User.Identity
+
+    // Example if you're using session or roles:
+    if (HttpContext.Current.Session["Role"] != null)
+    {
+        userRole = HttpContext.Current.Session["Role"].ToString();
+    }
+
+    if (userRole == "Admin")
+    {
+        Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
+    }
+    else if (userRole == "JobSeeker")
+    {
+        Layout = "~/Views/Shared/_JobSeekerLayoutPage.cshtml";
+    }
+    else if (userRole == "Employer")
+    {
+        Layout = "~/Views/Shared/_EmployerLayoutPage.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml"; // Default layout
+    }
+}

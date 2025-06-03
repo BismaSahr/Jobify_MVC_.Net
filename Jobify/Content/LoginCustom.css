@@ -1,0 +1,193 @@
+﻿/* Custom styles to achieve the reference image look. */
+
+:root {
+    --dark-blue: #3498db; /* A strong dark blue */
+    --light-blue: white; /* A lighter blue, for accents if needed */
+    --white: #ffffff;
+    --light-grey: #ecf0f1; /* For subtle backgrounds or borders */
+    --text-dark: #333333;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--light-grey);
+}
+
+/* Center the login container on the page */
+.min-vh-100 {
+    min-height: 100vh;
+}
+
+.login-container-wrapper {
+    background-color: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Ensures rounded corners apply to children */
+    max-width: 900px; /* Adjust max-width as desired */
+    width: 100%; /* Take full width up to max-width */
+}
+
+.left-panel, .right-panel {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+    .left-panel h2 {
+        font-size: 2.5em;
+        color: var(--dark-blue);
+        margin-bottom: 20px;
+    }
+
+
+
+.separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 80%; /* Adjust width for separator */
+    margin-bottom: 20px;
+    color: var(--text-dark);
+    font-size: 0.9em;
+}
+
+    .separator::before,
+    .separator::after {
+        content: '';
+        flex: 1;
+        border-bottom: 1px solid var(--light-grey);
+    }
+
+    .separator:not(:empty)::before {
+        margin-right: .25em;
+    }
+
+    .separator:not(:empty)::after {
+        margin-left: .25em;
+    }
+
+/* Adjust Bootstrap form-group for labels above inputs */
+.form-group label {
+    color: var(--text-dark);
+    font-weight: 600;
+    margin-bottom: 5px;
+    display: block; /* Ensure label is on its own line */
+    text-align: left;
+}
+
+.form-control {
+    border: 1px solid var(--light-grey);
+    border-radius: 8px; /* More rounded */
+    padding: 12px 15px;
+    transition: border-color 0.3s ease;
+}
+
+    .form-control:focus {
+        border-color: var(--light-blue);
+        box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25); /* Bootstrap-like focus */
+    }
+
+.forgot-password {
+    font-size: 0.9em;
+    color: var(--dark-blue);
+    text-decoration: none;
+    margin-top: 10px;
+    display: block;
+    text-align: left;
+}
+
+    .forgot-password:hover {
+        text-decoration: underline;
+    }
+
+.btn-primary-custom {
+    background-color: var(--dark-blue);
+    color: var(--white);
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-top: 25px;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Take full width of parent col */
+}
+
+    .btn-primary-custom:hover {
+        background-color: var(--light-blue);
+    }
+
+/* Right Panel Styling */
+.right-panel {
+    background-color: var(--dark-blue);
+    color: var(--white);
+    border-bottom-left-radius: 100px; /* Creates the curve for larger screens */
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.2); /* Inner shadow for depth */
+}
+
+    .right-panel h1 {
+        font-size: 2.2em;
+        margin-bottom: 15px;
+        color: var(--white);
+    }
+
+    .right-panel p {
+        font-size: 1em;
+        line-height: 1.5;
+        margin-bottom: 30px;
+        color: var(--white);
+    }
+
+.btn-secondary-custom {
+    background-color: var(--white);
+    color: var(--dark-blue);
+    padding: 12px 30px;
+    border: 2px solid var(--white);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    width: 100%; /* Take full width of parent col */
+}
+
+    .btn-secondary-custom:hover {
+        background-color: var(--dark-blue);
+        color: var(--white);
+        border-color: var(--white);
+    }
+
+/* Responsive adjustments for the custom curve on small screens */
+@media (max-width: 767.98px) { /* Bootstrap's standard breakpoint for small devices */
+    .login-container-wrapper {
+        flex-direction: column;
+        max-width: 400px; /* Make it narrower on mobile */
+    }
+
+    .left-panel, .right-panel {
+        padding: 30px;
+        border-radius: 0 !important; /* Reset specific panel rounded corners on stack */
+    }
+
+    .right-panel {
+        /* When stacked, the right panel (blue) should be on top and top rounded corners */
+        border-top-left-radius: 15px !important;
+        border-top-right-radius: 15px !important;
+        border-bottom-left-radius: 0 !important; /* Remove the specific curve */
+        order: -1; /* Place right panel on top in mobile */
+    }
+
+    .left-panel {
+        /* When stacked, the left panel (white) should have bottom rounded corners */
+        border-bottom-left-radius: 15px !important;
+        border-bottom-right-radius: 15px !important;
+    }
+
+    .separator, .form-group, .forgot-password, .btn-primary-custom, .btn-secondary-custom {
+        width: 100%; /* Make elements take full width in mobile */
+    }
+}

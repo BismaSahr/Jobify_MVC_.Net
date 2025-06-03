@@ -1,0 +1,239 @@
+﻿@model Jobify.Models.JobApplication
+
+@{
+    ViewBag.Title = "Edit Job Application";
+   
+}
+
+
+<style>
+    /* General body font - using a modern sans-serif stack */
+    body {
+        font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+        background-color: #f0f2f5; /* A softer, light-grey background */
+    }
+
+    .container {
+        max-width: 700px; /* Adjust max-width for better form readability */
+        margin-top: 50px;
+        margin-bottom: 50px; /* Add bottom margin for spacing */
+    }
+
+    /* Enhanced Card Styling */
+    .form-card {
+        background: #ffffff;
+        border-radius: 12px; /* Slightly more rounded corners */
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); /* Softer, more pronounced shadow */
+        padding: 2.5rem; /* Increased padding */
+        border: 1px solid #e0e0e0; /* Subtle border */
+    }
+
+    /* Gradient Header Styling */
+    .gradient-header {
+        background: #4A90E2; /* A more vibrant, subtle gradient */
+        color: white;
+        padding: 1.5rem; /* Adjusted padding */
+        border-radius: 8px; /* Slightly less rounded than card to differentiate */
+        margin-bottom: 2.5rem; /* Increased bottom margin */
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Shadow for the header */
+    }
+
+        .gradient-header h3 {
+            font-size: 1.8rem; /* Larger, more prominent heading */
+            font-weight: 700; /* Bolder text */
+            letter-spacing: 0.5px;
+        }
+
+    /* Form Group & Label Styling */
+    .form-group {
+        margin-bottom: 1.5rem; /* Consistent spacing between form groups */
+    }
+
+    label {
+        font-weight: 600; /* Bolder labels */
+        color: #555; /* Slightly darker grey for better contrast */
+        margin-bottom: 0.5rem; /* Space between label and input */
+        display: block; /* Ensure label takes full width */
+    }
+
+    /* Input Field Styling */
+    .form-control {
+        border-radius: 8px; /* Rounded input fields */
+        padding: 0.85rem 1rem; /* Comfortable padding */
+        border: 1px solid #ced4da;
+        transition: all 0.3s ease; /* Smooth transition for focus effect */
+    }
+
+        .form-control:focus {
+            border-color: #825ee4; /* Blue/purple border on focus */
+            box-shadow: 0 0 0 0.2rem rgba(130, 94, 228, 0.25); /* Glow effect on focus */
+            outline: none; /* Remove default outline */
+        }
+
+    /* Validation Message Styling */
+    .text-danger {
+        font-size: 0.875rem; /* Slightly smaller text for validation messages */
+        margin-top: 0.25rem;
+    }
+
+    .alert-danger {
+        border-radius: 8px;
+        font-size: 0.95rem;
+    }
+
+    /* Button Styling */
+    .btn-gradient {
+        background: #4A90E2; /* Same gradient as header */
+        color: white;
+        border: none;
+        border-radius: 8px; /* Consistent rounded corners */
+        padding: 0.75rem 2rem; /* Generous padding */
+        font-size: 1rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for button */
+    }
+
+        .btn-gradient:hover {
+            background: white; /* Slightly darker gradient on hover */
+            transform: translateY(-2px); /* Lift effect on hover */
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* More pronounced shadow on hover */
+            color: #4A90E2; /* Ensure text remains white on hover */
+        }
+
+        .btn-gradient:active {
+            transform: translateY(0); /* Press down effect on active */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+    .btn-outline-dark {
+        border-radius: 8px;
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        font-weight: 600;
+        color: #4A90E2;
+        border-color: #ccc;
+        transition: all 0.3s ease;
+    }
+
+        .btn-outline-dark:hover {
+            background-color: #4A90E2;
+            border-color: #b0b0b0;
+            color: #fff;
+            transform: translateY(-1px);
+        }
+
+        .btn-outline-dark:active {
+            transform: translateY(0);
+        }
+
+        /* Icon within button for better visual */
+        .btn-gradient i, .btn-outline-dark i {
+            margin-right: 8px;
+        }
+</style>
+
+<div class="container mt-5">
+    <div class="form-card">
+        <div class="gradient-header">
+            <h3 class="mb-0">
+                <i class="fas fa-file-alt me-2"></i> Edit Job Application
+            </h3>
+        </div>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            @Html.ValidationSummary(true, "", new { @class = "alert alert-danger" })
+            @Html.HiddenFor(model => model.ApplicationId)
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.JobId, "Job Post")
+                @Html.DropDownList("JobId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.JobId, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.JobSeekerId, "Job Seeker")
+                @Html.DropDownList("JobSeekerId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.JobSeekerId, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.FullName)
+                @Html.EditorFor(model => model.FullName, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter full name" } })
+                @Html.ValidationMessageFor(model => model.FullName, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Email)
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter email address" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Phone)
+                @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter phone number" } })
+                @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Skills)
+                @Html.EditorFor(model => model.Skills, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter skills (comma-separated)" } })
+                @Html.ValidationMessageFor(model => model.Skills, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.CoverLetter)
+                @Html.EditorFor(model => model.CoverLetter, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter cover letter text" } })
+                @Html.ValidationMessageFor(model => model.CoverLetter, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ResumeLink)
+                @Html.EditorFor(model => model.ResumeLink, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter resume link" } })
+                @Html.ValidationMessageFor(model => model.ResumeLink, "", new { @class = "text-danger" })
+            </div>
+
+         
+            <div class="d-flex justify-content-between mt-4">
+
+
+                @{
+                    var role = Session["Role"] as string;
+
+
+                }
+
+                @if (role == "Employer")
+                {
+                    <a href="@Url.Action("JobSeekerApplications","JobApplications")" class="btn btn-outline-dark">
+                        <i class="fas fa-arrow-left"></i> Back to List
+                    </a>}
+                else if (role == "JobSeeker")
+                {
+
+                    <a href="@Url.Action("JobSeekerApplications","JobApplications")" class="btn btn-outline-dark">
+                        <i class="fas fa-arrow-left"></i> Back to List
+                    </a>
+
+                }
+                else
+                {
+                    <a href="@Url.Action("Index")" class="btn btn-outline-dark">
+                        <i class="fas fa-arrow-left"></i> Back to List
+                    </a>}
+
+                <button type="submit" class="btn btn-gradient">
+                    <i class="fas fa-save"></i> Save Changes
+                </button>
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

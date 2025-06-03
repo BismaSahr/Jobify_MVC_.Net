@@ -1,0 +1,225 @@
+﻿@model Jobify.Models.SavedJob
+
+@{
+    ViewBag.Title = "Saved Job Details";
+    Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
+}
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+<style>
+    /* General body font and background */
+    body {
+        font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+        background-color: #f0f2f5; /* A softer, light-grey background */
+    }
+
+    .container {
+        max-width: 800px; /* Adjust max-width for content */
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    /* Enhanced Details Card Styling */
+    .details-card {
+        background-color: #ffffff;
+        border-radius: 12px;
+        padding: 2.5rem; /* Increased padding */
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); /* Softer, more pronounced shadow */
+        border: 1px solid #e0e0e0; /* Subtle border */
+    }
+
+    /* Gradient Header Styling */
+    .gradient-header {
+        background: #4A90E2; /* Consistent gradient from Edit page */
+        color: white;
+        padding: 1.5rem;
+        border-radius: 8px; /* Slightly less rounded than card to differentiate */
+        margin-top: -2.5rem; /* Pull up to overlap with card top */
+        margin-left: -2.5rem;
+        margin-right: -2.5rem;
+        margin-bottom: 2.5rem; /* Increased bottom margin */
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Shadow for the header */
+    }
+
+        .gradient-header h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 0;
+        }
+
+    /* Definition List (dl) Styling */
+    .dl-horizontal {
+        margin-bottom: 0; /* Remove default bottom margin */
+    }
+
+        .dl-horizontal dt, .dl-horizontal dd {
+            padding: 0.75rem 0; /* Consistent padding for each row */
+            line-height: 1.5; /* Improve readability */
+        }
+
+        .dl-horizontal dt {
+            font-weight: 600; /* Bolder terms */
+            color: #333;
+            width: 180px; /* Fixed width for terms for better alignment */
+            float: left; /* Keep dt and dd on the same line */
+            clear: left; /* Ensure dt starts on a new line */
+            text-align: right; /* Align terms to the right */
+            padding-right: 20px; /* Space between term and definition */
+        }
+
+        .dl-horizontal dd {
+            margin-left: 200px; /* Push definition past the fixed width of dt + padding */
+            color: #555;
+            border-bottom: 1px dashed #eee; /* Subtle dashed line separator */
+        }
+
+            .dl-horizontal dd:last-child {
+                border-bottom: none; /* No separator for the last item */
+            }
+
+    /* Action Buttons Styling */
+    .action-buttons {
+        margin-top: 2.5rem; /* Increased top margin */
+        display: flex;
+        justify-content: space-between;
+        gap: 15px; /* Space between buttons */
+        flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+    }
+
+    /* General Button Styling (similar to Edit page) */
+    .btn-action {
+        border: none;
+        border-radius: 8px;
+        padding: 0.75rem 1.8rem; /* Generous padding */
+        font-size: 1rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        text-decoration: none; /* Remove underline for links acting as buttons */
+        display: inline-flex; /* Align icon and text */
+        align-items: center;
+        justify-content: center;
+    }
+
+    .btn-edit {
+        background: #4A90E2; /* Blue/Purple gradient for Edit button */
+        color: white;
+    }
+
+        .btn-edit:hover {
+            background: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            color: #4A90E2; /* Ensure text remains white */
+        }
+
+        .btn-edit:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+    .btn-back {
+        background-color: #fff; /* Light grey background for Back button */
+        color: #4A90E2;
+        border: 1px solid #ccc;
+    }
+
+        .btn-back:hover {
+            background-color: #4A90E2;
+            border-color: #b0b0b0;
+            color: #fff;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08); /* Lighter shadow for back button */
+        }
+
+        .btn-back:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+    /* Icon within button */
+    .btn-action i {
+        margin-right: 8px;
+    }
+
+    /* Responsive adjustments for dl-horizontal */
+    @@media (max-width: 767px) {
+        .dl-horizontal dt, .dl-horizontal dd {
+            float: none;
+            width: auto;
+            text-align: left;
+            margin-left: 0;
+            padding-right: 0;
+            border-bottom: none; /* Remove dashed line on small screens */
+        }
+
+        .dl-horizontal dt {
+            margin-top: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .dl-horizontal dd {
+            margin-bottom: 0.5rem;
+        }
+
+            .dl-horizontal dd + dt { /* Add top margin for dt following a dd */
+                margin-top: 1.5rem;
+            }
+
+            .dl-horizontal dd:not(:last-child) {
+                border-bottom: 1px dashed #eee; /* Add dashed line below dd for non-last items */
+                padding-bottom: 0.75rem;
+            }
+
+        .action-buttons {
+            flex-direction: column; /* Stack buttons vertically */
+            gap: 10px; /* Space between stacked buttons */
+        }
+
+        .btn-action {
+            width: 100%; /* Full width buttons */
+        }
+    }
+</style>
+
+<div class="container">
+    <div class="details-card">
+        <div class="gradient-header">
+            <h3 class="mb-0">
+                <i class="fas fa-info-circle me-2"></i> Saved Job Details
+            </h3>
+        </div>
+
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.JobPost.Title)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.JobPost.Title)
+            </dd>
+
+         
+            <dt>
+                @Html.DisplayNameFor(model => model.SavedAt)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.SavedAt)
+            </dd>
+        </dl>
+
+        <div class="action-buttons">
+            @Html.ActionLink("Edit", "Edit", new { id = Model.SavedJobId }, new { @class = "btn-action btn-edit" })
+            <a href="@Url.Action("Index")" class="btn-action btn-back">
+                <i class="fas fa-arrow-left"></i> Back to List
+            </a>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

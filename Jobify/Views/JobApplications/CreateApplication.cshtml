@@ -1,0 +1,220 @@
+﻿@model Jobify.ViewModels.JobApplicationViewModel
+
+@{
+    ViewBag.Title = "Create Job Application";
+}
+
+<style>
+    body {
+        font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+        background-color: #f0f2f5;
+    }
+
+    .container {
+        max-width: 800px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .details-card {
+        background-color: #ffffff;
+        border-radius: 12px;
+        padding: 2.5rem;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        border: 1px solid #e0e0e0;
+    }
+
+    .gradient-header {
+        background: #4A90E2;
+        color: white;
+        padding: 1.5rem;
+        border-radius: 8px;
+        margin-top: -2.5rem;
+        margin-left: -2.5rem;
+        margin-right: -2.5rem;
+        margin-bottom: 2.5rem;
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+        .gradient-header h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 0;
+        }
+
+    .form-group-custom {
+        margin-bottom: 1.5rem;
+    }
+
+        .form-group-custom label {
+            display: block;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+    .form-control {
+        width: 100%;
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #495057;
+        background-color: #fff;
+        border: 1px solid #ced4da;
+        border-radius: 0.375rem;
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+
+        .form-control:focus {
+            border-color: #80bdff;
+            outline: 0;
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+        }
+
+    .action-buttons {
+        margin-top: 2.5rem;
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .btn-action {
+        border: none;
+        border-radius: 8px;
+        padding: 0.75rem 1.8rem;
+        font-size: 1rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .btn-create {
+        background: #4A90E2;
+        color: white;
+    }
+
+        .btn-create:hover {
+            background: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            color: #4A90E2;
+            border: 1px solid #4A90E2;
+        }
+
+        .btn-create:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+    .btn-back {
+        background-color: #fff;
+        color: #4A90E2;
+        border: 1px solid #ccc;
+    }
+
+        .btn-back:hover {
+            background-color: #4A90E2;
+            border-color: #4A90E2;
+            color: #fff;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .btn-back:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+    .btn-action i {
+        margin-right: 8px;
+    }
+
+    @@media (max-width: 767px) {
+        .action-buttons {
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .btn-action {
+            width: 100%;
+        }
+    }
+</style>
+
+<div class="container">
+    <div class="details-card">
+        <div class="gradient-header">
+            <h3 class="mb-0">
+                <i class="fas fa-file-alt me-2"></i> Create New Job Application
+            </h3>
+        </div>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+ 
+
+            <div class="form-group-custom">
+                @Html.LabelFor(model => model.JobSeekerFullName, "Full Name")
+                @Html.EditorFor(model => model.JobSeekerFullName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.JobSeekerFullName, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group-custom">
+                @Html.LabelFor(model => model.JobSeekerEmail, "Email")
+                @Html.EditorFor(model => model.JobSeekerEmail, new { htmlAttributes = new { @class = "form-control", type = "email" } })
+                @Html.ValidationMessageFor(model => model.JobSeekerEmail, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group-custom">
+                @Html.LabelFor(model => model.JobSeekerPhone, "Phone")
+                @Html.EditorFor(model => model.JobSeekerPhone, new { htmlAttributes = new { @class = "form-control", type = "tel" } })
+                @Html.ValidationMessageFor(model => model.JobSeekerPhone, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group-custom">
+                @Html.LabelFor(model => model.Skills)
+                @Html.TextAreaFor(model => model.Skills, new { @class = "form-control", rows = 3 })
+                @Html.ValidationMessageFor(model => model.Skills, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group-custom">
+                @Html.LabelFor(model => model.CoverLetter)
+                @Html.TextAreaFor(model => model.CoverLetter, new { @class = "form-control", rows = 5 })
+                @Html.ValidationMessageFor(model => model.CoverLetter, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group-custom">
+                @Html.LabelFor(model => model.ResumeLink)
+                @Html.EditorFor(model => model.ResumeLink, new { htmlAttributes = new { @class = "form-control", type = "url" } })
+                @Html.ValidationMessageFor(model => model.ResumeLink, "", new { @class = "text-danger" })
+            </div>
+
+        
+
+            <div class="action-buttons">
+                <button type="submit" class="btn-action btn-create">
+                    <i class="fas fa-paper-plane"></i> Submit Application
+                </button>
+                <a href="@Url.Action("Index","Home")" class="btn-action btn-back">
+                    <i class="fas fa-list"></i> Back to List
+                </a>
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+}

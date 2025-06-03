@@ -1,0 +1,251 @@
+﻿@model IEnumerable<Jobify.Models.User>
+
+@{
+    ViewBag.Title = "Users";
+    Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
+}
+
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin-top: 20px;
+    }
+
+    .card {
+        border: none;
+        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    }
+
+    .card-header {
+        background-color: #fff;
+        border-bottom: 1px solid #dee2e6;
+        padding: 1rem 1.5rem;
+    }
+
+    .nav-tabs {
+        border-bottom: none;
+        margin-bottom: 0;
+    }
+
+        .nav-tabs .nav-link {
+            border: 1px solid transparent;
+            border-radius: 0.25rem 0.25rem 0 0;
+            color: #6c757d;
+            padding: 0.75rem 1.25rem;
+            margin-right: 5px;
+        }
+
+            .nav-tabs .nav-link.active {
+                color: #4A90E2;
+                background-color: #fff;
+                border-color: #dee2e6 #dee2e6 #fff;
+                font-weight: 500;
+            }
+
+    .table {
+        margin-bottom: 0;
+    }
+
+        .table thead th {
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #dee2e6;
+            color: #6c757d;
+            font-weight: 500;
+            padding: 0.75rem 1.5rem;
+        }
+
+        .table tbody td {
+            padding: 0.75rem 1.5rem;
+            vertical-align: middle;
+        }
+
+        .table tbody tr {
+            border-bottom: 1px solid #e9ecef;
+        }
+
+    .action-icons a,
+    .action-icons button {
+        color: #6c757d;
+        margin-right: 10px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 1.1rem;
+    }
+
+    .add-new-button {
+        background-color: #4A90E2;
+        border-color: #5d78ff;
+        color: white;
+        font-size: 0.875rem;
+    }
+
+    #deleteModal .modal-content {
+        border-radius: 10px;
+        border: none;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    #deleteModal .modal-header {
+        border-bottom: none;
+        padding: 2rem;
+        justify-content: center;
+    }
+
+        #deleteModal .modal-header div {
+            background-color: #f2dede;
+            color: #a94442;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+    #deleteModal .modal-body {
+        padding: 0 2rem 1.5rem;
+        text-align: center;
+    }
+
+    #deleteModal .modal-title {
+        color: #333;
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+
+    #deleteModal .modal-body p {
+        color: #777;
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    #deleteModal .modal-footer {
+        border-top: none;
+        padding: 1rem 2rem 2rem;
+        justify-content: center;
+    }
+
+    #deleteModal .btn-secondary {
+        color: #333;
+        background-color: #f8f9fa;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 0.75rem 1.5rem;
+        margin-right: 0.5rem;
+    }
+
+    #deleteModal .btn-danger {
+        color: white;
+        background-color: #dc3545;
+        border: none;
+        border-radius: 5px;
+        padding: 0.75rem 1.5rem;
+        margin-left: 0.5rem;
+    }
+</style>
+
+<div class="container mt-5">
+    <ul class="nav nav-tabs" id="userTabs" role="tablist">
+        <li class="nav-item"><button class="nav-link active" id="admins-tab" data-bs-toggle="tab" data-bs-target="#admins" type="button" role="tab">Admins</button></li>
+        <li class="nav-item"><button class="nav-link" id="employers-tab" data-bs-toggle="tab" data-bs-target="#employers" type="button" role="tab">Employers</button></li>
+        <li class="nav-item"><button class="nav-link" id="jobseekers-tab" data-bs-toggle="tab" data-bs-target="#jobseekers" type="button" role="tab">Job Seekers</button></li>
+    </ul>
+
+    <div class="tab-content" id="userTabsContent">
+        @foreach (var role in new[] { "Admin", "Employer", "JobSeeker" })
+        {
+            var tabId = role.ToLower() + "s";
+            var isActive = role == "Admin" ? "show active" : "";
+            <div class="tab-pane fade @isActive" id="@tabId" role="tabpanel">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h2 class="mb-0">@role</h2>
+                        <button class="btn add-new-button" onclick="location.href='@Url.Action("CreateUser", "Admins", new { role = role })'">Add New</button>
+
+                    </div>
+                    <div class="card-body p-0">
+                        <table class="table table-striped table-bordered text-center m-0">
+                            <thead>
+                                <tr>
+                                    <th>@Html.DisplayNameFor(model => model.First().FullName)</th>
+                                    <th>@Html.DisplayNameFor(model => model.First().Phone)</th>
+                                    <th>@Html.DisplayNameFor(model => model.First().Email)</th>
+                                    <th>Operation</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var user in Model.Where(u => u.Role == role))
+                                {
+                                    <tr>
+                                        <td>@user.FullName</td>
+                                        <td>@user.Phone</td>
+                                        <td>@user.Email</td>
+                                        <td class="action-icons">
+                                            <a href="@Url.Action("Edit", new { id = user.UserId })" title="Edit"><i class="fas fa-edit text-primary"></i></a>
+                                            <a href="@Url.Action("UserFullDetails", new { id = user.UserId })" title="Details"><i class="fas fa-info-circle text-info"></i></a>
+                                            <button class="text-danger" title="Delete"
+                                                    data-bs-toggle="modal"
+                                                    data-bs-target="#deleteModal"
+                                                    data-userid="@user.UserId"
+                                                    data-username="@user.FullName">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<!-- Delete Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div><i class="fas fa-exclamation-triangle" style="font-size: 1.5rem;"></i></div>
+            </div>
+            <div class="modal-body">
+                <h5 class="modal-title" id="deleteModalLabel">Delete User</h5>
+                <p>Are you sure you want to delete user <strong id="userNameToDelete"></strong>?<br>This action cannot be undone.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <form id="deleteForm" method="post" action="@Url.Action("Delete", "Users")">
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" name="id" id="userIdToDelete" />
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    var deleteModal = document.getElementById('deleteModal');
+    deleteModal.addEventListener('show.bs.modal', function (event) {
+        var button = event.relatedTarget;
+        var userId = button.getAttribute('data-userid');
+        var userName = button.getAttribute('data-username');
+        document.getElementById('userNameToDelete').textContent = userName;
+        document.getElementById('userIdToDelete').value = userId;
+        console.log('Modal opened for User ID:', userId, 'User Name:', userName);
+    });
+
+    document.getElementById('deleteForm').addEventListener('submit', function (event) {
+        console.log('Delete form submitted for User ID:', document.getElementById('userIdToDelete').value);
+    });
+</script>
