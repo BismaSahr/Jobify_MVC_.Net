@@ -1,0 +1,113 @@
+Create database Jobify;
+
+-- 1. Table: User
+-- Base table for all types of users (Admin, Employer, JobSeeker).
+CREATE TABLE [User] (
+    UserId INT PRIMARY KEY IDENTITY(1,1), -- Assuming auto-incrementing primary key
+    FullName NVARCHAR(255) NOT NULL,
+    Email NVARCHAR(255) NOT NULL UNIQUE,
+    PasswordHash NVARCHAR(255) NOT NULL,
+    Phone NVARCHAR(50),
+    Role NVARCHAR(50) NOT NULL, -- e.g., 'Admin', 'Employer', 'JobSeeker'
+    CreatedAt DATETIME DEFAULT GETDATE()
+);
+
+-- 2. Table: Admin
+-- Represents administrative users.
+-- AdminId is a foreign key referencing UserId in the User table.
+CREATE TABLE Admin (
+    AdminId INT PRIMARY KEY,
+    Department NVARCHAR(255),
+    FOREIGN KEY (AdminId) REFERENCES [User](UserId)
+);
+
+-- 3. Table: Employer
+-- Represents employers who post jobs.
+-- EmployerId is a foreign key referencing UserId in the User table.
+CREATE TABLE Employer (
+    EmployerId INT PRIMARY KEY,
+    CompanyName NVARCHAR(255) NOT NULL,
+    Website NVARCHAR(255),
+    Address NVARCHAR(500),
+    Designation NVARCHAR(255),
+    FOREIGN KEY (EmployerId) REFERENCES [User](UserId)
+);
+
+-- 4. Table: JobSeeker
+-- Represents job seekers.
+-- JobSeekerId is a foreign key referencing UserId in the User table.
+CREATE TABLE JobSeeker (
+    JobSeekerId INT PRIMARY KEY,
+    Gender NVARCHAR(50),
+    DateOfBirth DATE,
+    FOREIGN KEY (JobSeekerId) REFERENCES [User](UserId)
+);
+
+-- 5. Table: Category
+-- Represents different job categories.
+CREATE TABLE Category (
+    CategoryId INT PRIMARY KEY IDENTITY(1,1),
+    CategoryName NVARCHAR(255) NOT NULL UNIQUE
+);
+
+-- 6. Table: Location
+-- Stores location details for job posts.
+CREATE TABLE Location (
+    LocationId INT PRIMARY KEY IDENTITY(1,1),
+    City NVARCHAR(255) NOT NULL,
+    Country NVARCHAR(255) NOT NULL
+);
+
+-- 7. Table: JobPost
+-- Represents job postings.
+CREATE TABLE JobPost (
+    JobId INT PRIMARY KEY IDENTITY(1,1),
+    Title NVARCHAR(255) NOT NULL,
+    Description NVARCHAR(MAX),
+    EmployerId INT NOT NULL,
+    CategoryId INT NOT NULL,
+    LocationId INT NOT NULL,
+    SalaryRange NVARCHAR(100),
+    Deadline DATE,
+    CreatedAt DATETIME DEFAULT GETDATE(),
+    FOREIGN KEY (EmployerId) REFERENCES Employer(EmployerId),
+    FOREIGN KEY (CategoryId) REFERENCES Category(CategoryId),
+    FOREIGN KEY (LocationId) REFERENCES Location(LocationId)
+);
+
+-- 8. Table: JobApplication
+-- Stores details of job applications.
+CREATE TABLE JobApplication (
+    ApplicationId INT PRIMARY KEY IDENTITY(1,1),
+    JobId INT NOT NULL,
+    JobSeekerId INT NOT NULL,
+    FullName NVARCHAR(255), -- Denormalized for application snapshot, or could be fetched from User
+    Email NVARCHAR(255),    -- Denormalized for application snapshot, or could be fetched from User
+    Phone NVARCHAR(50),     -- Denormalized for application snapshot, or could be fetched from User
+    CoverLetter NVARCHAR(MAX),
+    ResumeLink NVARCHAR(500),
+    AppliedAt DATETIME DEFAULT GETDATE(),
+    FOREIGN KEY (JobId) REFERENCES JobPost(JobId),
+    FOREIGN KEY (JobSeekerId) REFERENCES JobSeeker(JobSeekerId)
+);
+
+-- 9. Table: Resume
+-- Stores job seeker resumes.
+CREATE TABLE Resume (
+    ResumeId INT PRIMARY KEY IDENTITY(1,1),
+    JobSeekerId INT NOT NULL,
+    ResumeLink NVARCHAR(500) NOT NULL,
+    UploadedAt DATETIME DEFAULT GETDATE(),
+    FOREIGN KEY (JobSeekerId) REFERENCES JobSeeker(JobSeekerId)
+);
+
+-- 10. Table: SavedJob
+-- Stores jobs saved by job seekers.
+CREATE TABLE SavedJob (
+    SavedJobId INT PRIMARY KEY IDENTITY(1,1),
+    JobId INT NOT NULL,
+    JobSeekerId INT NOT NULL,
+    SavedAt DATETIME DEFAULT GETDATE(),
+    FOREIGN KEY (JobId) REFERENCES JobPost(JobId),
+    FOREIGN KEY (JobSeekerId) REFERENCES JobSeeker(JobSeekerId)
+);
